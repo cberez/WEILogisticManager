@@ -4,5 +4,6 @@ app/bootstrap.php.cache
 app/cache/*
 app/logs/*
 build/
-vendor
+vendor/*
+!vendor/vendors.php
 composer.phar

@@ -134,13 +134,19 @@
         </exec>
     </target>
 
-    <!-- OUTDATED for Symfony2
+    <!-- OUTDATED for Symfony2, replaced by "composer update"
     <target name="vendors" description="Update vendors">
         <exec executable="${basedir}/bin/vendors" failonerror="true">
             <arg value="update" />
         </exec>
     </target>-->
-
+    
+    <target name="composer" description="Install project dependancies">
+        <exec executable="composer">
+            <arg value="update" />
+        </exec>
+    </target>
+    
     <target name="parameters" description="Copy parameters">
         <exec executable="cp" failonerror="true">
             <arg path="app/config/parameters.ini.template" />
