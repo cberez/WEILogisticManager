@@ -134,11 +134,12 @@
         </exec>
     </target>
 
+    <!-- OUTDATED for Symfony2
     <target name="vendors" description="Update vendors">
         <exec executable="${basedir}/bin/vendors" failonerror="true">
             <arg value="update" />
         </exec>
-    </target>
+    </target>-->
 
     <target name="parameters" description="Copy parameters">
         <exec executable="cp" failonerror="true">
