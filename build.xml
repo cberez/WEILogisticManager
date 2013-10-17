@@ -59,7 +59,7 @@
     </target>
 
     <target name="pdepend" description="Calculate software metrics using PHP_Depend">
-        <exec executable="pdepend">
+        <exec executable="/usr/local/bin/pdepend">
             <arg value="--jdepend-xml=${basedir}/app/build/logs/jdepend.xml" />
             <arg value="--jdepend-chart=${basedir}/app/build/pdepend/dependencies.svg" />
             <arg value="--overview-pyramid=${basedir}/app/build/pdepend/overview-pyramid.svg" />
@@ -68,7 +68,7 @@
     </target>
 
     <target name="phpmd" description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
-        <exec executable="phpmd">
+        <exec executable="/usr/local/bin/phpmd">
             <arg path="${basedir}/src" />
             <arg value="text" />
             <arg value="${basedir}/app/Resources/jenkins/phpmd.xml" />
@@ -76,7 +76,7 @@
     </target>
 
     <target name="phpmd-ci" description="Perform project mess detection using PHPMD creating a log file for the continuous integration server">
-        <exec executable="phpmd">
+        <exec executable="/usr/local/bin/phpmd">
             <arg path="${basedir}/src" />
             <arg value="xml" />
             <arg value="${basedir}/app/Resources/jenkins/phpmd.xml" />
@@ -86,14 +86,14 @@
     </target>
 
     <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
-        <exec executable="phpcs">
+        <exec executable="/usr/local/bin/phpcs">
             <arg value="--standard=Symfony2-Coding-Standards" />
             <arg path="${basedir}/src" />
         </exec>
     </target>
 
     <target name="phpcs-ci" description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
-        <exec executable="phpcs" output="/dev/null">
+        <exec executable="/usr/local/bin/phpcs" output="/dev/null">
             <arg value="--report=checkstyle" />
             <arg value="--report-file=${basedir}/app/build/logs/checkstyle.xml" />
             <arg value="--standard=Symfony2-Coding-Standards" />
@@ -102,7 +102,7 @@
     </target>
 
     <target name="phpcpd" description="Find duplicate code using PHPCPD">
-        <exec executable="phpcpd">
+        <exec executable="/usr/local/bin/phpcpd">
             <arg value="--log-pmd" />
             <arg value="${basedir}/app/build/logs/pmd-cpd.xml" />
             <arg path="${basedir}/src" />
@@ -110,21 +110,21 @@
     </target>
 
     <target name="phpdox" description="Generate API documentation using phpDox">
-        <exec executable="phpdox">
+        <exec executable="/usr/local/bin/phpdox">
             <arg value="-f" />
             <arg path="${basedir}/app/Resources/jenkins/phpdox.xml" />
         </exec>
     </target>
 
     <target name="phpunit" description="Run unit tests with PHPUnit">
-        <exec executable="phpunit" failonerror="true">
+        <exec executable="/usr/local/bin/phpunit" failonerror="true">
             <arg value="-c" />
             <arg path="${basedir}/app/phpunit.xml" />
         </exec>
     </target>
 
     <target name="phpcb" description="Aggregate tool output with PHP_CodeBrowser">
-        <exec executable="phpcb">
+        <exec executable="/usr/local/bin/phpcb">
             <arg value="--log" />
             <arg path="${basedir}/app/build/logs" />
             <arg value="--source" />
