@@ -156,12 +156,7 @@
         </exec>
         <exec executable="php" failonerror="true">
             <arg value="composer.phar" />
-            <arg value="install" />
-            <arg value="--dev" />
-            <arg value="--prefer-dist" />
-            <arg value="--no-progress" />
-            <arg value="--no-interaction" />
-            <arg value="--no-scripts" />
+            <arg value="update" />
         </exec>
     </target>
     
