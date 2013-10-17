@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="WEILogisticManager" default="build">
-    <target name="build" depends="prepare,parameters,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpunit,phpcb"/>
+    <target name="build" depends="prepare,composer,parameters,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpunit,phpcb"/>
 
     <target name="build-parallel" depends="prepare,lint,tools-parallel,phpunit,phpcb"/>
 
@@ -134,9 +134,28 @@
         </exec>
     </target>
 
-    <!-- OUTDATED for Symfony2, replaced by "composer update"
+    <!-- OUTDATED for Symfony2, replaced by "composer update"-->
     <target name="vendors" description="Update vendors">
         <exec executable="${basedir}/bin/vendors" failonerror="true">
+            <arg value="update" />
+        </exec>
+    </target>
+    
+    <target name="composer" depends="clean" description="Install project dependancies">
+        <exec executable="curl" failonerror="true">
+            <arg value="-o" />
+            <arg value="composer.phar" />
+            <arg value="http://getcomposer.org/composer.phar" />
+        </exec>
+        <exec executable="php">
+            <arg value="composer.phar" />
+            <arg value="config" />
+            <arg value="--global" />
+            <arg value="be84b6efcecab1cfb6ddccceca201ab77d8bc718" />
+            <arg value="github_oauth-key" />
+        </exec>
+        <exec executable="php" failonerror="true">
+            <arg value="composer.phar" />
             <arg value="update" />
         </exec>
     </target>-->
