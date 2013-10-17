@@ -17,12 +17,6 @@
         </parallel>
     </target>
 
-    <target name="checkPath" description="Cleanup build artifacts">
-        <apply executable="echo" failonerror="true">
-            <arg value="$PATH" />
-        </apply>
-    </target>
-
     <target name="clean" description="Cleanup build artifacts">
         <delete dir="${basedir}/app/build/api"/>
         <delete dir="${basedir}/app/build/code-browser"/>
