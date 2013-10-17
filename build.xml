@@ -151,8 +151,8 @@
             <arg value="composer.phar" />
             <arg value="config" />
             <arg value="--global" />
+            <arg value="github-oauth.github.com" />
             <arg value="be84b6efcecab1cfb6ddccceca201ab77d8bc718" />
-            <arg value="github_oauth-key" />
         </exec>
         <exec executable="php" failonerror="true">
             <arg value="composer.phar" />
