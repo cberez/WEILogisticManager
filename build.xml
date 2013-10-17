@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="WEILogisticManager" default="build">
-    <target name="build" depends="prepare,composer,parameters,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpunit,phpcb"/>
+    <target name="build" depends="prepare,parameters,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpunit,phpcb"/>
 
     <target name="build-parallel" depends="prepare,lint,tools-parallel,phpunit,phpcb"/>
 
@@ -141,7 +141,7 @@
         </exec>
     </target>-->
     
-    <target name="composer" depends="clean" description="Install project dependancies">
+    <!--<target name="composer" depends="clean" description="Install project dependancies">
         <exec executable="curl" failonerror="true">
             <arg value="-o" />
             <arg value="composer.phar" />
@@ -158,7 +158,7 @@
             <arg value="composer.phar" />
             <arg value="update" />
         </exec>
-    </target>
+    </target>-->
     
     <target name="parameters" description="Copy parameters">
         <exec executable="cp" failonerror="true">
