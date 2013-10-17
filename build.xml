@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="WEILogisticManager" default="build">
-    <target name="build" depends="prepare,composer,parameters,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpunit,phpcb"/>
+    <target name="build" depends="checkPath,prepare,composer,sparameters,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpunit,phpcb"/>
 
     <target name="build-parallel" depends="prepare,lint,tools-parallel,phpunit,phpcb"/>
 
@@ -15,6 +15,12 @@
             <antcall target="phploc"/>
             <antcall target="phpdox"/>
         </parallel>
+    </target>
+
+    <target name="checkPath" description="Cleanup build artifacts">
+        <apply executable="echo" failonerror="true">
+            <arg value="$PATH" />
+        </apply>
     </target>
 
     <target name="clean" description="Cleanup build artifacts">
