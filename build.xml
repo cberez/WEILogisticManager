@@ -141,25 +141,6 @@
         </exec>
     </target>-->
     
-    <!--<target name="composer" depends="clean" description="Install project dependancies">
-        <exec executable="curl" failonerror="true">
-            <arg value="-o" />
-            <arg value="composer.phar" />
-            <arg value="http://getcomposer.org/composer.phar" />
-        </exec>
-        <exec executable="php">
-            <arg value="composer.phar" />
-            <arg value="config" />
-            <arg value="--global" />
-            <arg value="github-oauth.github.com" />
-            <arg value="github_oauth-key" />
-        </exec>
-        <exec executable="php" failonerror="true">
-            <arg value="composer.phar" />
-            <arg value="update" />
-        </exec>
-    </target>-->
-    
     <target name="parameters" description="Copy parameters">
         <exec executable="cp" failonerror="true">
             <arg path="app/config/parameters.ini.template" />
