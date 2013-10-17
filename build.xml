@@ -142,8 +142,9 @@
     </target>-->
     
     <target name="composer" depends="clean" description="Install project dependancies">
-        <exec executable="wget" failonerror="true">
-            <arg value="-nc" />
+        <exec executable="curl" failonerror="true">
+            <arg value="-o" />
+            <arg value="composer.phar" />
             <arg value="http://getcomposer.org/composer.phar" />
         </exec>
         <exec executable="php">
