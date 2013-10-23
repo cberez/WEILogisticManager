@@ -11,11 +11,11 @@
                 <version>1.7</version>
                 <executions>
                   <execution>
-                    <phase>install</phase>
+                    <phase>analysis</phase>
                     <configuration>
                       <target>
-                        <property name="buildDir" value="${project.build.directory}/${project.build.finalName}" />
-                        <ant antfile="build.xml" target="static-assets" />
+                        <!--<property name="buildDir" value="${project.build.directory}/${project.build.finalName}" />-->
+                        <ant antfile="trunk/build.xml" target="static-assets" />
                       </target>
                     </configuration>
                     <goals>
