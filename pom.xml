@@ -13,10 +13,16 @@
                   <execution>
                     <phase>analysis</phase>
                     <configuration>
+                      <tasks>
+                        <echo message="Beginning ant build"/>
+                      </tasks>
                       <target>
-                        <!--<property name="buildDir" value="${project.build.directory}/${project.build.finalName}" />-->
+                        <property name="buildDir" value="${project.build.directory}/${project.build.finalName}" />-
                         <ant antfile="trunk/build.xml" target="static-assets" />
                       </target>
+                      <tasks>
+                        <echo message="Ending ant build"/>
+                      </tasks>
                     </configuration>
                     <goals>
                       <goal>run</goal>
