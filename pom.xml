@@ -4,23 +4,27 @@
         <groupId>fr.cesarBere</groupId>
         <artifactId>WEILogisticManager</artifactId>
         <version>0.0.1</version>
-        <executions>
-          <execution>
-              <id>deploy-ui</id>
-              <phase>prepare-package</phase>
-              <inherited>false</inherited>
-              <configuration>
-                  <target>
-                      <property name="buildDir" value="${project.build.directory}/${project.build.finalName}" />
-                      <ant antfile="build.xml" target="static-assets" />
-                  </target>
-              </configuration>
-              <goals>
-                  <goal>run</goal>
-              </goals>
-          </execution>
-        </executions>
         <build>
+          <plugins>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                  <execution>
+                    <phase>install</phase>
+                    <configuration>
+                      <target>
+                        <property name="buildDir" value="${project.build.directory}/${project.build.finalName}" />
+                        <ant antfile="build.xml" target="static-assets" />
+                      </target>
+                    </configuration>
+                    <goals>
+                      <goal>run</goal>
+                    </goals>
+                  </execution>
+                </executions>
+            </plugin>
+          </plugins>
           <sourceDirectory>src</sourceDirectory>
         </build>
 </project>
