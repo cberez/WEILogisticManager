@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metrics generated="2013-10-21T15:11:43" pdepend="1.1.1" ahh="1.7142857142857" andc="0" calls="42" ccn="28" ccn2="28" cloc="54" clsa="0" clsc="9" eloc="204" fanout="15" leafs="3" lloc="105" loc="325" maxDIT="2" ncloc="271" noc="9" nof="0" noi="0" nom="23" nop="7" roots="6">
+  <files>
+    <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/AcmeDemoBundle.php" cloc="0" eloc="6" lloc="2" loc="10" ncloc="10"/>
+    <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/Controller/DemoController.php" cloc="15" eloc="32" lloc="20" loc="58" ncloc="43"/>
+    <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/Controller/SecuredController.php" cloc="24" eloc="36" lloc="17" loc="69" ncloc="45"/>
+    <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/Controller/WelcomeController.php" cloc="5" eloc="10" lloc="4" loc="19" ncloc="14"/>
+    <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/DependencyInjection/AcmeDemoExtension.php" cloc="0" eloc="18" lloc="10" loc="23" ncloc="23"/>
+    <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/EventListener/ControllerListener.php" cloc="0" eloc="19" lloc="10" loc="25" ncloc="25"/>
+    <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/Form/ContactType.php" cloc="0" eloc="16" lloc="8" loc="21" ncloc="21"/>
+    <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/Tests/Controller/DemoControllerTest.php" cloc="0" eloc="12" lloc="6" loc="18" ncloc="18"/>
+    <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/Twig/Extension/DemoExtension.php" cloc="10" eloc="55" lloc="28" loc="82" ncloc="72"/>
+  </files>
+  <package name="Acme\DemoBundle" cr="0.15" noc="1" nof="0" noi="0" nom="0" rcr="0.2775">
+    <class name="AcmeDemoBundle" ca="0" cbo="0" ce="0" cis="0" cloc="0" cr="0.15" csz="0" dit="2" eloc="0" impl="0" lloc="0" loc="3" ncloc="3" noam="0" nocc="0" nom="0" noom="0" npm="0" rcr="0.2775" vars="0" varsi="0" varsnp="0" wmc="0" wmci="0" wmcnp="0">
+      <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/AcmeDemoBundle.php"/>
+    </class>
+  </package>
+  <package name="Acme\DemoBundle\Controller" cr="0.15" noc="3" nof="0" noi="0" nom="9" rcr="0.2775">
+    <class name="DemoController" ca="0" cbo="2" ce="2" cis="3" cloc="14" cr="0.15" csz="3" dit="2" eloc="19" impl="0" lloc="11" loc="45" ncloc="31" noam="3" nocc="0" nom="3" noom="0" npm="3" rcr="0.1925" vars="0" varsi="0" varsnp="0" wmc="5" wmci="5" wmcnp="5">
+      <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/Controller/DemoController.php"/>
+      <method name="indexAction" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="helloAction" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="contactAction" ccn="3" ccn2="3" cloc="2" eloc="13" lloc="9" loc="20" ncloc="18" npath="3"/>
+    </class>
+    <class name="SecuredController" ca="0" cbo="2" ce="2" cis="5" cloc="21" cr="0.15" csz="5" dit="2" eloc="21" impl="0" lloc="6" loc="55" ncloc="34" noam="5" nocc="0" nom="5" noom="0" npm="5" rcr="0.1925" vars="0" varsi="0" varsnp="0" wmc="6" wmci="6" wmcnp="6">
+      <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/Controller/SecuredController.php"/>
+      <method name="loginAction" ccn="2" ccn2="2" cloc="0" eloc="11" lloc="4" loc="13" ncloc="13" npath="2"/>
+      <method name="securityCheckAction" ccn="1" ccn2="1" cloc="1" eloc="2" lloc="0" loc="4" ncloc="3" npath="1"/>
+      <method name="logoutAction" ccn="1" ccn2="1" cloc="1" eloc="2" lloc="0" loc="4" ncloc="3" npath="1"/>
+      <method name="helloAction" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="helloadminAction" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+    </class>
+    <class name="WelcomeController" ca="0" cbo="0" ce="0" cis="1" cloc="5" cr="0.15" csz="1" dit="2" eloc="3" impl="0" lloc="1" loc="12" ncloc="7" noam="1" nocc="0" nom="1" noom="0" npm="1" rcr="0.1925" vars="0" varsi="0" varsnp="0" wmc="1" wmci="1" wmcnp="1">
+      <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/Controller/WelcomeController.php"/>
+      <method name="indexAction" ccn="1" ccn2="1" cloc="5" eloc="3" lloc="1" loc="9" ncloc="4" npath="1"/>
+    </class>
+  </package>
+  <package name="Acme\DemoBundle\DependencyInjection" cr="0.15" noc="1" nof="0" noi="0" nom="2" rcr="0.2775">
+    <class name="AcmeDemoExtension" ca="0" cbo="3" ce="3" cis="2" cloc="0" cr="0.15" csz="2" dit="2" eloc="7" impl="0" lloc="3" loc="13" ncloc="13" noam="2" nocc="0" nom="2" noom="0" npm="2" rcr="0.2775" vars="0" varsi="0" varsnp="0" wmc="2" wmci="2" wmcnp="2">
+      <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/DependencyInjection/AcmeDemoExtension.php"/>
+      <method name="load" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="5" ncloc="5" npath="1"/>
+      <method name="getAlias" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+    </class>
+  </package>
+  <package name="Acme\DemoBundle\EventListener" cr="0.15" noc="1" nof="0" noi="0" nom="2" rcr="0.15">
+    <class name="ControllerListener" ca="0" cbo="3" ce="3" cis="2" cloc="0" cr="0.15" csz="3" dit="0" eloc="8" impl="0" lloc="3" loc="16" ncloc="16" noam="0" nocc="0" nom="2" noom="0" npm="2" rcr="0.15" vars="1" varsi="1" varsnp="0" wmc="3" wmci="3" wmcnp="3">
+      <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/EventListener/ControllerListener.php"/>
+      <method name="__construct" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="onKernelController" ccn="2" ccn2="2" cloc="0" eloc="5" lloc="2" loc="6" ncloc="6" npath="2"/>
+    </class>
+  </package>
+  <package name="Acme\DemoBundle\Form" cr="0.15" noc="1" nof="0" noi="0" nom="2" rcr="0.2775">
+    <class name="ContactType" ca="1" cbo="1" ce="1" cis="2" cloc="0" cr="0.15" csz="2" dit="2" eloc="7" impl="0" lloc="3" loc="13" ncloc="13" noam="2" nocc="0" nom="2" noom="0" npm="2" rcr="0.2775" vars="0" varsi="0" varsnp="0" wmc="2" wmci="2" wmcnp="2">
+      <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/Form/ContactType.php"/>
+      <method name="buildForm" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="5" ncloc="5" npath="1"/>
+      <method name="getName" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+    </class>
+  </package>
+  <package name="Acme\DemoBundle\Tests\Controller" cr="0.15" noc="1" nof="0" noi="0" nom="1" rcr="0.2775">
+    <class name="DemoControllerTest" ca="0" cbo="0" ce="0" cis="1" cloc="0" cr="0.15" csz="1" dit="2" eloc="5" impl="0" lloc="3" loc="11" ncloc="11" noam="1" nocc="0" nom="1" noom="0" npm="1" rcr="0.2775" vars="0" varsi="0" varsnp="0" wmc="1" wmci="1" wmcnp="1">
+      <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/Tests/Controller/DemoControllerTest.php"/>
+      <method name="testIndex" ccn="1" ccn2="1" cloc="0" eloc="5" lloc="3" loc="8" ncloc="8" npath="1"/>
+    </class>
+  </package>
+  <package name="Acme\DemoBundle\Twig\Extension" cr="0.15" noc="1" nof="0" noi="0" nom="7" rcr="0.2775">
+    <class name="DemoExtension" ca="1" cbo="4" ce="4" cis="5" cloc="10" cr="0.15" csz="9" dit="2" eloc="40" impl="0" lloc="17" loc="75" ncloc="65" noam="7" nocc="0" nom="7" noom="0" npm="5" rcr="0.2775" vars="2" varsi="2" varsnp="0" wmc="8" wmci="8" wmcnp="5">
+      <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/Twig/Extension/DemoExtension.php"/>
+      <method name="__construct" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="setController" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="getFunctions" ccn="1" ccn2="1" cloc="0" eloc="5" lloc="1" loc="6" ncloc="6" npath="1"/>
+      <method name="getCode" ccn="1" ccn2="1" cloc="2" eloc="13" lloc="5" loc="19" ncloc="17" npath="1"/>
+      <method name="getControllerCode" ccn="2" ccn2="2" cloc="0" eloc="10" lloc="7" loc="14" ncloc="14" npath="2"/>
+      <method name="getTemplateCode" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="getName" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+    </class>
+  </package>
+</metrics>

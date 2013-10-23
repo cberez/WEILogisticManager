@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="1.4.7">
+ <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/Controller/DemoController.php">
+  <error line="15" column="5" severity="warning" message="This comment is 50% valid code; is this commented out code?" source="Squiz.PHP.CommentedOutCode.Found"/>
+  <error line="24" column="5" severity="warning" message="This comment is 50% valid code; is this commented out code?" source="Squiz.PHP.CommentedOutCode.Found"/>
+  <error line="33" column="5" severity="warning" message="This comment is 50% valid code; is this commented out code?" source="Squiz.PHP.CommentedOutCode.Found"/>
+  <error line="39" column="52" severity="error" message="New objects must be assigned to a variable" source="Squiz.Objects.ObjectInstantiation.NotAssigned"/>
+  <error line="47" column="17" severity="warning" message="This comment is 67% valid code; is this commented out code?" source="Squiz.PHP.CommentedOutCode.Found"/>
+  <error line="49" column="86" severity="warning" message="Line exceeds 80 characters; contains 85 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+ <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/Controller/SecuredController.php">
+  <error line="11" column="1" severity="warning" message="This comment is 58% valid code; is this commented out code?" source="Squiz.PHP.CommentedOutCode.Found"/>
+  <error line="16" column="5" severity="warning" message="This comment is 50% valid code; is this commented out code?" source="Squiz.PHP.CommentedOutCode.Found"/>
+  <error line="23" column="87" severity="warning" message="Line exceeds 80 characters; contains 86 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="25" column="89" severity="warning" message="Line exceeds 80 characters; contains 88 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="29" column="92" severity="warning" message="Line exceeds 80 characters; contains 91 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="34" column="5" severity="warning" message="This comment is 50% valid code; is this commented out code?" source="Squiz.PHP.CommentedOutCode.Found"/>
+  <error line="42" column="5" severity="warning" message="This comment is 50% valid code; is this commented out code?" source="Squiz.PHP.CommentedOutCode.Found"/>
+  <error line="50" column="5" severity="warning" message="This comment is 55% valid code; is this commented out code?" source="Squiz.PHP.CommentedOutCode.Found"/>
+  <error line="60" column="5" severity="warning" message="This comment is 50% valid code; is this commented out code?" source="Squiz.PHP.CommentedOutCode.Found"/>
+ </file>
+ <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/DependencyInjection/AcmeDemoExtension.php">
+  <error line="12" column="12" severity="warning" message="The method parameter $configs is never used" source="Generic.CodeAnalysis.UnusedFunctionParameter.Found"/>
+  <error line="14" column="49" severity="error" message="New objects must be assigned to a variable" source="Squiz.Objects.ObjectInstantiation.NotAssigned"/>
+  <error line="14" column="98" severity="warning" message="Line exceeds 80 characters; contains 97 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+ <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/Form/ContactType.php">
+  <error line="10" column="12" severity="warning" message="The method parameter $options is never used" source="Generic.CodeAnalysis.UnusedFunctionParameter.Found"/>
+ </file>
+ <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/Tests/Controller/DemoControllerTest.php">
+  <error line="15" column="97" severity="warning" message="Line exceeds 80 characters; contains 96 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+ <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/Twig/Extension/DemoExtension.php">
+  <error line="22" column="5" severity="warning" message="This comment is 50% valid code; is this commented out code?" source="Squiz.PHP.CommentedOutCode.Found"/>
+  <error line="28" column="13" severity="error" message="New objects must be assigned to a variable" source="Squiz.Objects.ObjectInstantiation.NotAssigned"/>
+  <error line="28" column="106" severity="warning" message="Line exceeds 80 characters; contains 105 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="35" column="84" severity="warning" message="Line exceeds 80 characters; contains 83 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="36" column="148" severity="error" message="Line exceeds maximum limit of 120 characters; contains 147 characters" source="Generic.Files.LineLength.MaxExceeded"/>
+  <error line="38" column="94" severity="warning" message="Line exceeds 80 characters; contains 93 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="64" column="147" severity="error" message="Line exceeds maximum limit of 120 characters; contains 146 characters" source="Generic.Files.LineLength.MaxExceeded"/>
+ </file>
+</checkstyle>

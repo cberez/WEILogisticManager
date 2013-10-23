@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pmd version="1.5.0" timestamp="2013-10-21T15:11:44+02:00">
+  <file name="/Library/WebServer/Documents/WEILogisticManager/src/Acme/DemoBundle/Controller/DemoController.php">
+    <violation beginline="45" endline="45" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$mailer'.
+    </violation>
+  </file>
+</pmd>
