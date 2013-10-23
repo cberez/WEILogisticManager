@@ -1,9 +1,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <modelVersion>4.0.0</modelVersion>
-        <groupId>fr.edf</groupId>
+        <groupId>fr.cesarBere</groupId>
         <artifactId>WEILogisticManager</artifactId>
         <version>0.0.1</version>
+        <executions>
+          <execution>
+              <id>deploy-ui</id>
+              <phase>prepare-package</phase>
+              <inherited>false</inherited>
+              <configuration>
+                  <target>
+                      <property name="buildDir" value="${project.build.directory}/${project.build.finalName}" />
+                      <ant antfile="build.xml" target="static-assets" />
+                  </target>
+              </configuration>
+              <goals>
+                  <goal>run</goal>
+              </goals>
+          </execution>
+        </executions>
         <build>
           <sourceDirectory>src</sourceDirectory>
         </build>
