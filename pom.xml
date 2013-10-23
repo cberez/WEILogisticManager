@@ -7,26 +7,28 @@
         <build>
           <plugins>
             <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>1.7</version>
                 <executions>
                   <execution>
+                    <id>Ant</id>
                     <phase>analysis</phase>
+                    <goals>
+                      <goal>run</goal>
+                    </goals>
                     <configuration>
                       <target>
                         <echo message="Beginning ant build"/>
                       </target>
-                      <target>
+                      <tasks>
                         <property name="buildDir" value="${project.build.directory}/${project.build.finalName}" />-
-                        <ant antfile="trunk/build.xml" target="static-assets" />
-                      </target>   
+                        <ant antfile="${basedir}/trunk/build.xml" target="static-assets" />
+                      </tasks>   
                       <target>
                         <echo message="Ending ant build"/>
                       </target>
                     </configuration>
-                    <goals>
-                      <goal>run</goal>
-                    </goals>
                   </execution>
                 </executions>
             </plugin>
