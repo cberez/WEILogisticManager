@@ -1,0 +1,19 @@
+wei_logistic_manager_admin_homepage:
+    pattern:  /homepage
+    defaults: { _controller: WEILogisticManagerAdminBundle:Homepage:index }
+
+wei_logistic_manager_admin_myfiles:
+    pattern:  /myfiles
+    defaults: { _controller: WEILogisticManagerAdminBundle:MyFiles:index }
+
+wei_logistic_manager_admin_places:
+    pattern:  /places
+    defaults: { _controller: WEILogisticManagerAdminBundle:Places:index }
+
+wei_logistic_manager_admin_activities:
+    pattern:  /activities
+    defaults: { _controller: WEILogisticManagerAdminBundle:Activities:index }
+
+wei_logistic_manager_admin_timetables:
+    pattern:  /timetables
+    defaults: { _controller: WEILogisticManagerAdminBundle:Timetables:index }

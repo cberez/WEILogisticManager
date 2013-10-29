@@ -13,6 +13,11 @@ _configurator:
 _main:
     resource: routing.yml
 
+
 # AcmeDemoBundle routes (to be removed)
 _acme_demo:
     resource: "@AcmeDemoBundle/Resources/config/routing.yml"
+
+wei_logistic_manager_admin:
+    resource: "@WEILogisticManagerAdminBundle/Resources/config/routing.yml"
+    prefix:   /

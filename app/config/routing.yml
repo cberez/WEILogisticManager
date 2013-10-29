@@ -1,0 +1,4 @@
+wei_logistic_manager_admin:
+    resource: "@WEILogisticManagerAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+

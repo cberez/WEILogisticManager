@@ -1,0 +1,19 @@
+parameters:
+#    wei_logistic_manager_admin.example.class: WEILogisticManager\AdminBundle\Example
+
+services:
+#    wei_logistic_manager_admin.example:
+#        class: %wei_logistic_manager_admin.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    wei_logistic_manager_admin.menu_builder:
+        class: WEILogisticManager\AdminBundle\Menu\MenuBuilder
+        arguments: ['@knp_menu.factory']
+
+    wei_logistic_manager_admin.menu.dashboard:
+        class: Knp\Menu\MenuItem
+        factory_service: wei_logistic_manager_admin.menu_builder
+        factory_method: createDashboardMenu
+        arguments: ['@request']
+        scope: request
+        tags:
+            - { name: knp_menu.menu, alias: dashboard }
