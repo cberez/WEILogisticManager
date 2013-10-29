@@ -30,6 +30,7 @@ class MenuBuilder
         $menu->setChildrenAttributes(array('class' => 'nav'));
         $menu->setCurrentUri($request->getRequestUri());
 
+        $menu->addChild('Accueil', array('route' => 'wei_logistic_manager_admin_homepage'));
         $menu->addChild('Mes Fichiers', array('route' => 'wei_logistic_manager_admin_myfiles'));
         $menu->addChild('Lieux', array('route' => 'wei_logistic_manager_admin_places'));
         $menu->addChild('Activités', array('route' => 'wei_logistic_manager_admin_activities'));
