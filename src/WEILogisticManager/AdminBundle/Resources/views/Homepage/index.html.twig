@@ -1,5 +1,12 @@
 {% extends "WEILogisticManagerAdminBundle::layout.html.twig" %}
 
 {% block content %}
-    <h1>Hello !</h1>
+    <h1>Welcome to the WEI Logistic Manager dashboard</h1>
+
+    {% if events is empty %}
+        <p>You don't have any events yet, please create one : </p>
+    {% else %}
+
+    {% endif %}
+
 {% endblock %}

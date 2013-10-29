@@ -16,6 +16,15 @@ class HomepageController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('WEILogisticManagerAdminBundle:Homepage:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $qb = $em->createQueryBuilder();
+
+        $qb->from('WEILogisticManagerAdminBundle:Event', 'e');
+        $qb->select('e');
+        $events = $qb->getQuery()->getResult();
+
+        return $this->render('WEILogisticManagerAdminBundle:Homepage:index.html.twig', array(
+            'events' => $events
+        ));
     }
 }
