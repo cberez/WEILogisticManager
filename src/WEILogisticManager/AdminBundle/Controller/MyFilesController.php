@@ -23,6 +23,6 @@ class MyFilesController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('WEILogisticManagerAdminBundle:Homepage:myfiles.html.twig');
+        return $this->render('WEILogisticManagerAdminBundle:MyFiles:index.html.twig');
     }
 }
