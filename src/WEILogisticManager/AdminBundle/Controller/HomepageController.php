@@ -3,8 +3,6 @@
 namespace WEILogisticManager\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
-// these import the "@Route" and "@Template" annotations
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
@@ -36,7 +34,7 @@ class HomepageController extends Controller
     }
 
     /**
-     * @Route("/homepage/create_event")
+     * @Route("/homepage/event/create")
      * @Template()
      */
     public function createEventAction(Request $request)
@@ -61,11 +59,27 @@ class HomepageController extends Controller
             $em->persist($data);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('wei_logistic_manager_admin_homepage'));
+            return $this->redirect($this->generateUrl('_admin_homepage'));
         }
 
         return $this->render('WEILogisticManagerAdminBundle:Homepage:createEvent.html.twig', array(
             'form' => $form->createView(),
         ));
+    }
+
+    /**
+     * @Route("/homepage/event/update")
+     */
+    public function updateEventAction()
+    {
+
+    }
+
+    /**
+     * @Route("/homepage/event/delete")
+     */
+    public function deleteEventAction()
+    {
+
     }
 }

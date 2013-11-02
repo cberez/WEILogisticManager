@@ -5,7 +5,7 @@
 
     {% if events is empty %}
         <p>You don't have any events yet, please create one : </p>
-        <a class="btn btn-success btn-large" href="{{ path('wei_logistic_manager_admin_homepage_createevent') }}">Create An Event</a>
+        <a class="btn btn-success btn-large" href="{{ path('_admin_homepage_event_create') }}">Create An Event</a>
 
     {% else %}
         <table class="table">
@@ -15,6 +15,7 @@
                     <th>Place</th>
                     <th>Begin date</th>
                     <th>End date</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -24,6 +25,10 @@
                         <td>{{ event.place }}</td>
                         <td>{{ event.beginDate | date("d/m/Y h:m") }}</td>
                         <td>{{ event.endDate | date("d/m/Y h:m") }}</td>
+                        <td>
+                            <a class="btn" href="{{ path('_admin_homepage_event_create') }}">Update</a>
+                            <a class="btn btn-danger" href="{{ path('_admin_homepage_event_create') }}">Delete</a>
+                        </td>
                     </tr>
                 {%  endfor %}
             </tbody>

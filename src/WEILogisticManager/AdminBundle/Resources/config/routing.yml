@@ -1,23 +1,23 @@
-wei_logistic_manager_admin_homepage:
+_admin_homepage:
     pattern:  /homepage
     defaults: { _controller: WEILogisticManagerAdminBundle:Homepage:index }
 
-wei_logistic_manager_admin_homepage_createevent:
-    pattern:  /homepage/create_event
+_admin_homepage_event_create:
+    pattern:  /homepage/event/create
     defaults: { _controller: WEILogisticManagerAdminBundle:Homepage:createEvent }
 
-wei_logistic_manager_admin_myfiles:
+_admin_myfiles:
     pattern:  /myfiles
     defaults: { _controller: WEILogisticManagerAdminBundle:MyFiles:index }
 
-wei_logistic_manager_admin_places:
+_admin_places:
     pattern:  /places
     defaults: { _controller: WEILogisticManagerAdminBundle:Places:index }
 
-wei_logistic_manager_admin_activities:
+_admin_activities:
     pattern:  /activities
     defaults: { _controller: WEILogisticManagerAdminBundle:Activities:index }
 
-wei_logistic_manager_admin_timetables:
+_admin_timetables:
     pattern:  /timetables
     defaults: { _controller: WEILogisticManagerAdminBundle:Timetables:index }
