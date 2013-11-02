@@ -6,6 +6,14 @@ _admin_homepage_event_create:
     pattern:  /homepage/event/create
     defaults: { _controller: WEILogisticManagerAdminBundle:Homepage:createEvent }
 
+_admin_homepage_event_udpate:
+    pattern:  /homepage/event/update/{id}
+    defaults: { _controller: WEILogisticManagerAdminBundle:Homepage:updateEvent }
+
+_admin_homepage_event_delete:
+    pattern:  /homepage/event/delete/{id}
+    defaults: { _controller: WEILogisticManagerAdminBundle:Homepage:deleteEvent }
+
 _admin_myfiles:
     pattern:  /myfiles
     defaults: { _controller: WEILogisticManagerAdminBundle:MyFiles:index }

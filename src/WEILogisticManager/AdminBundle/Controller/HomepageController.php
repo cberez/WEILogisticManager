@@ -26,8 +26,6 @@ class HomepageController extends Controller
         $qb->select('e');
         $events = $qb->getQuery()->getResult();
 
-
-
         return $this->render('WEILogisticManagerAdminBundle:Homepage:index.html.twig', array(
             'events' => $events,
         ));
@@ -62,24 +60,55 @@ class HomepageController extends Controller
             return $this->redirect($this->generateUrl('_admin_homepage'));
         }
 
-        return $this->render('WEILogisticManagerAdminBundle:Homepage:createEvent.html.twig', array(
+        return $this->render('WEILogisticManagerAdminBundle:Homepage:event.html.twig', array(
             'form' => $form->createView(),
+            'action' => "Create",
         ));
     }
 
     /**
-     * @Route("/homepage/event/update")
+     * @Route("/homepage/event/update/{id}")
+     * @Template()
      */
-    public function updateEventAction()
+    public function updateEventAction(Event $event, Request $request)
     {
+        $form = $this->createForm(new EventType(), $event);
 
+        $form->handleRequest($request);
+
+        if($form->isValid())
+        {
+            //Persist object in database
+            $data = $form->getData();
+
+            /** @var EntityManager $em */
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($data);
+            $em->flush();
+            return $this->render('WEILogisticManagerAdminBundle:Homepage:event.html.twig', array(
+                'form' => $form->createView(),
+                'action' => "Update",
+            ));
+        }
+
+
+        return $this->render('WEILogisticManagerAdminBundle:Homepage:event.html.twig', array(
+            'form' => $form->createView(),
+            'action' => "Update",
+        ));
     }
 
     /**
-     * @Route("/homepage/event/delete")
+     * @Route("/homepage/event/delete/{id}")
+     * @Template()
      */
-    public function deleteEventAction()
+    public function deleteEventAction(Event $event)
     {
+        /** @var EntityManager $em */
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($event);
+        $em->flush();
 
+        return $this->redirect($this->generateUrl('_admin_homepage'));
     }
 }
