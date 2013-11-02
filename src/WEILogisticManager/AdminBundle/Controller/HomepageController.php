@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use WEILogisticManager\AdminBundle\Entity\Event;
+use WEILogisticManager\AdminBundle\Form\Type\EventType;
 
 class HomepageController extends Controller
 {
@@ -39,22 +40,21 @@ class HomepageController extends Controller
     public function createEventAction(Request $request)
     {
         $event = new Event();
-        $event->setName('test');
-        $event->setPlace('paris');
+        $event->setName('Event name');
+        $event->setPlace('Event place');
+        $event->setBeginDate(new \DateTime("now"));
+        $event->setBeginDate(new \DateTime("now"));
 
-        $form = $this->createFormBuilder($event)
-            ->add('name', 'text')
-            ->add('beginDate', 'date')
-            ->add('endDate', 'date')
-            ->add('place', 'text')
-            ->add('create', 'submit')
-            ->getForm();
+        $form = $this->createForm(new EventType(), new Event());
 
         $form->handleRequest($request);
 
         if($form->isValid())
         {
             //Persist object in database
+            $data = $form->getData();
+            var_dump($data);
+
         }
 
         return $this->render('WEILogisticManagerAdminBundle:Homepage:createEvent.html.twig', array(

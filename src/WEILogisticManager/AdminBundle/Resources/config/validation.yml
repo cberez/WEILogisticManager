@@ -1,0 +1,16 @@
+WEILogisticManager\AdminBundle\Entity\Event:
+    properties:
+        name:
+            - NotBlank: ~
+            - NotIdenticalTo:
+                value : name
+        beginDate:
+            - NotBlank: ~
+            - Type: \DateTime
+        endDate:
+            - NotBlank: ~
+            - Type: \DateTime
+        place:
+            - NotBlank: ~
+            - NotIdenticalTo:
+                value : place

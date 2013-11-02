@@ -151,4 +151,12 @@ class Event
     {
         return $this->place;
     }
+
+    public function __construct()
+    {
+        $this->setName("name");
+        $this->setPlace("place");
+        $this->setBeginDate(new \DateTime('now'));
+        $this->setEndDate(new \DateTime('now'));
+    }
 }
