@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use WEILogisticManager\AdminBundle\Entity\Event;
 use WEILogisticManager\AdminBundle\Form\Type\EventType;
+use Doctrine\ORM\EntityManager;
 
 class HomepageController extends Controller
 {
@@ -19,6 +20,7 @@ class HomepageController extends Controller
      */
     public function indexAction(Request $request)
     {
+        /** @var EntityManager $em */
         $em = $this->getDoctrine()->getManager();
         $qb = $em->createQueryBuilder();
 
@@ -53,8 +55,13 @@ class HomepageController extends Controller
         {
             //Persist object in database
             $data = $form->getData();
-            var_dump($data);
 
+            /** @var EntityManager $em */
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($data);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('wei_logistic_manager_admin_homepage'));
         }
 
         return $this->render('WEILogisticManagerAdminBundle:Homepage:createEvent.html.twig', array(

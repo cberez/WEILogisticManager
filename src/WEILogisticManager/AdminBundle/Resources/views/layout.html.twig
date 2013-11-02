@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>WEILogisticManager</title>
-    <link rel="stylesheet" href="{{ asset('bundles/weilogisticmanageradmin/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('bundles/weilogisticmanageradmin/css/style.css') }}">
-</head>
-<body>
+    <head>
+        <title>WEILogisticManager</title>
+        <link rel="stylesheet" href="{{ asset('bundles/weilogisticmanageradmin/css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/weilogisticmanageradmin/css/style.css') }}">
+    </head>
+    <body>
 
-<script src="{{ asset('js/jquery.js') }}"></script>
-<script src="{{ asset('js/bootstrap.js') }}"></script>
+        <script src="{{ asset('js/jquery.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.js') }}"></script>
 
-<div class="navbar navbar-static-top">
-    <div class="navbar-inner">
-        <a class="brand" href="#">WEILogisticManager</a>
-        {{ knp_menu_render('dashboard', { 'currentClass': 'active'}) }}
-    </div>
-</div>
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <a class="brand" href="#">WEILogisticManager</a>
+                {{ knp_menu_render('dashboard', { 'currentClass': 'active'}) }}
+            </div>
+        </div>
 
-<div class="content">
-{% block content %}
-{% endblock %}
-</div>
-</body>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
 </html>

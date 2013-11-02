@@ -19,8 +19,8 @@ class EventType extends AbstractType
     {
         $builder->add('name', 'text');
         $builder->add('place', 'text');
-        $builder->add('beginDate', 'date');
-        $builder->add('endDate', 'date');
+        $builder->add('beginDate', 'datetime');
+        $builder->add('endDate', 'datetime');
     }
 
     public function getName()
