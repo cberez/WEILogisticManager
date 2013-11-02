@@ -4,7 +4,9 @@
     <h1>Welcome to the WEI Logistic Manager dashboard</h1>
 
     {% if events is empty %}
-        <p>You don't have any events yet, please create one : </p>
+        <p>You don't have any events yet, please create one :
+            <a class="btn btn-success btn-large" href="{{ path('wei_logistic_manager_admin_homepage_createevent') }}">Create An Event</a>
+        </p>
     {% else %}
 
     {% endif %}

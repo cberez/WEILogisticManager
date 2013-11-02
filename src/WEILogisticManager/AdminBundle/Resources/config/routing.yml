@@ -2,6 +2,10 @@ wei_logistic_manager_admin_homepage:
     pattern:  /homepage
     defaults: { _controller: WEILogisticManagerAdminBundle:Homepage:index }
 
+wei_logistic_manager_admin_homepage_createevent:
+    pattern:  /homepage/create_event
+    defaults: { _controller: WEILogisticManagerAdminBundle:Homepage:createEvent }
+
 wei_logistic_manager_admin_myfiles:
     pattern:  /myfiles
     defaults: { _controller: WEILogisticManagerAdminBundle:MyFiles:index }
