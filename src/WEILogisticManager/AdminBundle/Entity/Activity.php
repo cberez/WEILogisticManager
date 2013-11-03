@@ -12,8 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Activity
 {
-    //TODO Add link to the event
-
     /**
      * @var integer
      *
@@ -36,6 +34,13 @@ class Activity
      * @ORM\OneToOne(targetEntity="WEILogisticManager\AdminBundle\Entity\Place")
      */
     protected $place;
+
+    /**
+     * @var Event
+     *
+     * @ORM\OneToOne(targetEntity="WEILogisticManager\AdminBundle\Entity\Event")
+     */
+    protected $event;
 
     /**
      * @var \DateTime
@@ -152,5 +157,35 @@ class Activity
     public function getPlace()
     {
         return $this->place;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->event = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set event
+     *
+     * @param \WEILogisticManager\AdminBundle\Entity\Event $event
+     * @return Activity
+     */
+    public function setEvent(\WEILogisticManager\AdminBundle\Entity\Event $event = null)
+    {
+        $this->event = $event;
+    
+        return $this;
+    }
+
+    /**
+     * Get event
+     *
+     * @return \WEILogisticManager\AdminBundle\Entity\Event 
+     */
+    public function getEvent()
+    {
+        return $this->event;
     }
 }

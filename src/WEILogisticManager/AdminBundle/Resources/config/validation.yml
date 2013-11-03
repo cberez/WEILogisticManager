@@ -14,3 +14,25 @@ WEILogisticManager\AdminBundle\Entity\Event:
             - NotBlank: ~
             - NotIdenticalTo:
                 value : place
+
+WEILogisticManager\AdminBundle\Entity\Activity:
+    properties:
+        name:
+            - NotBlank: ~
+            - NotIdenticalTo:
+                value : name
+        beginDate:
+            - NotBlank: ~
+            - Type: \DateTime
+        endDate:
+            - NotBlank: ~
+            - Type: \DateTime
+        place:
+            - NotBlank: ~
+
+WEILogisticManager\AdminBundle\Entity\Place:
+    properties:
+        name:
+            - NotBlank: ~
+            - NotIdenticalTo:
+                value : name
