@@ -9,12 +9,14 @@ use Symfony\Component\HttpFoundation\Request;
 use WEILogisticManager\AdminBundle\Entity\Event;
 use WEILogisticManager\AdminBundle\Form\Type\EventType;
 use Doctrine\ORM\EntityManager;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 
 class HomepageController extends Controller
 {
     /**
      * @Route("/homepage")
      * @Template()
+     * @Secure("ROLE_USER")
      */
     public function indexAction(Request $request)
     {
@@ -34,6 +36,7 @@ class HomepageController extends Controller
     /**
      * @Route("/homepage/event/create")
      * @Template()
+     * @Secure("ROLE_USER")
      */
     public function createEventAction(Request $request)
     {
@@ -69,6 +72,7 @@ class HomepageController extends Controller
     /**
      * @Route("/homepage/event/update/{id}")
      * @Template()
+     * @Secure("ROLE_USER")
      */
     public function updateEventAction(Event $event, Request $request)
     {
@@ -98,6 +102,7 @@ class HomepageController extends Controller
     /**
      * @Route("/homepage/event/delete/{id}")
      * @Template()
+     * @Secure("ROLE_USER")
      */
     public function deleteEventAction(Event $event)
     {
