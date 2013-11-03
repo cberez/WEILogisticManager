@@ -30,7 +30,7 @@ class MenuBuilder
         $menu->setChildrenAttributes(array('class' => 'nav'));
         $menu->setCurrentUri($request->getRequestUri());
 
-        $menu->addChild('Homepage', array('route' => '_admin_homepage'));
+        $menu->addChild('Events', array('route' => '_admin_events'));
         $menu->addChild('Files', array('route' => '_admin_files'));
         $menu->addChild('Places', array('route' => '_admin_places'));
         $menu->addChild('Activities', array('route' => '_admin_activities'));

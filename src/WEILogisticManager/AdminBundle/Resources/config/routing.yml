@@ -1,26 +1,26 @@
 _homepage:
     pattern: /
-    defaults: { _controller: WEILogisticManagerAdminBundle:Connection:index }
-
-_admin_homepage:
-    pattern:  /homepage
     defaults: { _controller: WEILogisticManagerAdminBundle:Homepage:index }
 
-_admin_homepage_event_create:
-    pattern:  /homepage/event/create
-    defaults: { _controller: WEILogisticManagerAdminBundle:Homepage:createEvent }
+_admin_events:
+    pattern:  /events
+    defaults: { _controller: WEILogisticManagerAdminBundle:Events:index }
 
-_admin_homepage_event_udpate:
-    pattern:  /homepage/event/update/{id}
-    defaults: { _controller: WEILogisticManagerAdminBundle:Homepage:updateEvent }
+_admin_events_create:
+    pattern:  /events/create
+    defaults: { _controller: WEILogisticManagerAdminBundle:Events:create }
 
-_admin_homepage_event_delete:
-    pattern:  /homepage/event/delete/{id}
-    defaults: { _controller: WEILogisticManagerAdminBundle:Homepage:deleteEvent }
+_admin_events_udpate:
+    pattern:  /events/update/{id}
+    defaults: { _controller: WEILogisticManagerAdminBundle:Events:update }
 
-_admin_homepage_event_select:
-    pattern:  /homepage/event/select/{id}
-    defaults: { _controller: WEILogisticManagerAdminBundle:Homepage:selectEvent }
+_admin_events_delete:
+    pattern:  /events/delete/{id}
+    defaults: { _controller: WEILogisticManagerAdminBundle:Events:delete }
+
+_admin_events_select:
+    pattern:  /events/select/{id}
+    defaults: { _controller: WEILogisticManagerAdminBundle:Events:select }
 
 _admin_files:
     pattern:  /files

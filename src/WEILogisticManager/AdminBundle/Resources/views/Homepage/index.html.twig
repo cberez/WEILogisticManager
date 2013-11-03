@@ -1,46 +1,28 @@
-{% extends "WEILogisticManagerAdminBundle::layout.html.twig" %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WEILogisticManager</title>
+    <link rel="stylesheet" href="{{ asset('bundles/weilogisticmanageradmin/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/weilogisticmanageradmin/css/style.css') }}">
+</head>
+<body>
 
-{% block content %}
-    <h1>Welcome to the WEI Logistic Manager dashboard</h1>
+<script src="{{ asset('js/jquery.js') }}"></script>
+<script src="{{ asset('js/bootstrap.js') }}"></script>
 
-    {% if events is empty %}
-        <p>You don't have any events yet, please create one : </p>
-        <a class="btn btn-success btn-large" href="{{ path('_admin_homepage_event_create') }}">Create An Event</a>
+<div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+        <a class="brand" href="#">WEILogisticManager</a>
+    </div>
+</div>
 
-    {% else %}
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Place</th>
-                    <th>Begin date</th>
-                    <th>End date</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for event in events %}
-                    <tr>
-                        <td>{{ event.name }}</td>
-                        <td>{{ event.place }}</td>
-                        <td>{{ event.beginDate | date("d/m/Y h:m") }}</td>
-                        <td>{{ event.endDate | date("d/m/Y h:m") }}</td>
-                        <td>
-                            <a class="btn btn-danger" href="{{ path('_admin_homepage_event_delete', {id : event.id}) }}" onclick="return confirm('Are you sure ?')">Delete</a>
-                            <a class="btn" href="{{ path('_admin_homepage_event_udpate', {id : event.id}) }}">Update</a>
-                            {% if session.has("event") %}
-                                {% if session.get("event") != event %}
-                                    <a class="btn btn-primary" href="{{ path('_admin_homepage_event_select', {id : event.id}) }}" >Select</a>
-                                {% endif %}
-                            {% endif %}
-                        </td>
-                    </tr>
-                {%  endfor %}
-                <tr>
-                    <td colspan="5"><a class="btn btn-success btn-block" href="{{ path('_admin_homepage_event_create') }}">Create An Event</a></td>
-                </tr>
-            </tbody>
-        </table>
-    {% endif %}
-
-{% endblock %}
+<div class="content">
+    <div class="row-fluid">
+        <div class="div-button span4 offset5" >
+            <a class="btn btn-success btn-large" href="{{ path('fos_user_security_login') }}">Sign in</a>
+            <a class="btn btn-large" href="{{ path('fos_user_registration_register') }}">Sign up</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

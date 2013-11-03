@@ -12,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Activity
 {
+    //TODO Add link to the event
+
     /**
      * @var integer
      *

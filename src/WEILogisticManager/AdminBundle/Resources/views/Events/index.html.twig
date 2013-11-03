@@ -1,0 +1,46 @@
+{% extends "WEILogisticManagerAdminBundle::layout.html.twig" %}
+
+{% block content %}
+    <h1>Welcome to the WEI Logistic Manager dashboard</h1>
+
+    {% if events is empty %}
+        <p>You don't have any events yet, please create one : </p>
+        <a class="btn btn-success btn-large" href="{{ path('_admin_events_create') }}">Create An Event</a>
+
+    {% else %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Place</th>
+                    <th>Begin date</th>
+                    <th>End date</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in events %}
+                    <tr>
+                        <td>{{ event.name }}</td>
+                        <td>{{ event.place }}</td>
+                        <td>{{ event.beginDate | date("d/m/Y h:m") }}</td>
+                        <td>{{ event.endDate | date("d/m/Y h:m") }}</td>
+                        <td>
+                            <a class="btn btn-danger" href="{{ path('_admin_events_delete', {id : event.id}) }}" onclick="return confirm('Are you sure ?')">Delete</a>
+                            <a class="btn" href="{{ path('_admin_events_udpate', {id : event.id}) }}">Update</a>
+                            {% if session.has("event") %}
+                                {% if session.get("event") != event %}
+                                    <a class="btn btn-primary" href="{{ path('_admin_events_select', {id : event.id}) }}" >Select</a>
+                                {% endif %}
+                            {% endif %}
+                        </td>
+                    </tr>
+                {%  endfor %}
+                <tr>
+                    <td colspan="5"><a class="btn btn-success btn-block" href="{{ path('_admin_events_create') }}">Create An Event</a></td>
+                </tr>
+            </tbody>
+        </table>
+    {% endif %}
+
+{% endblock %}
