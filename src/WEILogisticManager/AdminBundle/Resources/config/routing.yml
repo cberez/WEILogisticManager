@@ -42,6 +42,18 @@ _admin_activities:
     pattern:  /activities
     defaults: { _controller: WEILogisticManagerAdminBundle:Activities:index }
 
+_admin_activities_create:
+    pattern:  /activities/create
+    defaults: { _controller: WEILogisticManagerAdminBundle:Activities:create }
+
+_admin_activities_update:
+    pattern:  /activities/update/{id}
+    defaults: { _controller: WEILogisticManagerAdminBundle:Activities:update }
+
+_admin_activities_delete:
+    pattern:  /activities/delete/{id}
+    defaults: { _controller: WEILogisticManagerAdminBundle:Activities:delete }
+
 _admin_timetables:
     pattern:  /timetables
     defaults: { _controller: WEILogisticManagerAdminBundle:Timetables:index }

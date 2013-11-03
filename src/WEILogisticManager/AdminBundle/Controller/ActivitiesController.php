@@ -2,10 +2,14 @@
 
 namespace WEILogisticManager\AdminBundle\Controller;
 
+use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use JMS\SecurityExtraBundle\Annotation\Secure;
+use Symfony\Component\HttpFoundation\Request;
+use WEILogisticManager\AdminBundle\Entity\Activity;
+use WEILogisticManager\AdminBundle\Form\Type\ActivityType;
 
 class ActivitiesController extends Controller
 {
@@ -16,7 +20,90 @@ class ActivitiesController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('WEILogisticManagerAdminBundle:Activities:index.html.twig');
+        /** @var EntityManager $em */
+        $em = $this->getDoctrine()->getManager();
+        $qb = $em->createQueryBuilder();
+
+        $qb->from('WEILogisticManagerAdminBundle:Activity', 'a');
+        $qb->select('a');
+        $activities = $qb->getQuery()->getResult();
+
+        return $this->render('WEILogisticManagerAdminBundle:Activities:index.html.twig', array(
+            'activities' => $activities,
+        ));
     }
 
+    /**
+     * @Route("/activities/create")
+     * @Template()
+     * @Secure("ROLE_USER")
+     */
+    public function createAction(Request $request)
+    {
+        $form = $this->createForm(new ActivityType(), new Activity());
+
+        $form->handleRequest($request);
+
+        if($form->isValid())
+        {
+            //Persist object in database
+            $data = $form->getData();
+
+            /** @var EntityManager $em */
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($data);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('_admin_activities'));
+        }
+
+        return $this->render('WEILogisticManagerAdminBundle:Activities:form.html.twig', array(
+            'form' => $form->createView(),
+            'action' => "Create",
+        ));
+    }
+
+    /**
+     * @Route("/activities/update/{id}")
+     * @Template()
+     * @Secure("ROLE_USER")
+     */
+    public function updateAction(Activity $activity, Request $request)
+    {
+        $form = $this->createForm(new ActivityType(), $activity);
+
+        $form->handleRequest($request);
+
+        if($form->isValid())
+        {
+            $data = $form->getData();
+
+            /** @var EntityManager $em */
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($data);
+            $em->flush();
+            return $this->redirect($this->generateUrl('_admin_activities'));
+        }
+
+
+        return $this->render('WEILogisticManagerAdminBundle:Activities:form.html.twig', array(
+            'form' => $form->createView(),
+            'action' => "Update",
+        ));
+    }
+
+    /**
+     * @Route("/activities/delete/{id}")
+     * @Template()
+     * @Secure("ROLE_USER")
+     */
+    public function deleteAction(Activity $activity)
+    {
+        /** @var EntityManager $em */
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($activity);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('_admin_activities'));
+    }
 }

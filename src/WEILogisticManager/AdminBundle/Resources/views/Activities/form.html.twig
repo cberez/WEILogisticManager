@@ -1,0 +1,15 @@
+{% extends "WEILogisticManagerAdminBundle::layout.html.twig" %}
+
+{% block content %}
+    {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+        <legend>{{ action }} an event</legend>
+        {{ form_row(form.name) }}
+        {{ form_row(form.place) }}
+        {{ form_row(form.beginTime) }}
+        {{ form_row(form.endTime) }}
+
+        <input type="submit" value="Create" class="btn btn-primary" />
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,5 +1,38 @@
 {% extends "WEILogisticManagerAdminBundle::layout.html.twig" %}
 
 {% block content %}
-    <h1>Hello !</h1>
+    {% if activities is empty %}
+        <p>You don't have any activities yet, please create one : </p>
+        <a class="btn btn-success btn-large" href="{{ path('_admin_activities_create') }}">Create An Activity</a>
+
+    {% else %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Place</th>
+                <th>Begin date</th>
+                <th>End date</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for activity in activities %}
+                <tr>
+                    <td>{{ activity.name }}</td>
+                    <td>{{ activity.place }}</td>
+                    <td>{{ activity.beginDate | date("d/m/Y h:m") }}</td>
+                    <td>{{ activity.endDate | date("d/m/Y h:m") }}</td>
+                    <td>
+                        <a class="btn" href="{{ path('_admin_places_update', {id : activity.id}) }}">Update</a>
+                        <a class="btn btn-danger" href="{{ path('_admin_places_delete', {id : activity.id}) }}" onclick="return confirm('Are you sure ?')">Delete</a>
+                    </td>
+                </tr>
+            {%  endfor %}
+            <tr>
+                <td colspan="5"><a class="btn btn-success btn-block" href="{{ path('_admin_places_create') }}">Create A Place</a></td>
+            </tr>
+            </tbody>
+        </table>
+    {% endif %}
 {% endblock %}

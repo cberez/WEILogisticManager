@@ -18,7 +18,7 @@ class HomepageController extends Controller
      * @Template()
      * @Secure("ROLE_USER")
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
         /** @var EntityManager $em */
         $em = $this->getDoctrine()->getManager();
