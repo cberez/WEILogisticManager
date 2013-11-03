@@ -8,6 +8,12 @@
         <a class="btn btn-success btn-large" href="{{ path('_admin_events_create') }}">Create An Event</a>
 
     {% else %}
+        {% if session.has("event") != true %}
+            <div class="alert">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Warning !</strong> Please select an event to work with !
+            </div>
+        {% endif %}
         <table class="table">
             <thead>
                 <tr>
@@ -32,6 +38,8 @@
                                 {% if session.get("event") != event %}
                                     <a class="btn btn-primary" href="{{ path('_admin_events_select', {id : event.id}) }}" >Select</a>
                                 {% endif %}
+                            {% else %}
+                                <a class="btn btn-primary" href="{{ path('_admin_events_select', {id : event.id}) }}" >Select</a>
                             {% endif %}
                         </td>
                     </tr>
