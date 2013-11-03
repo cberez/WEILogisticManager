@@ -18,9 +18,9 @@ _admin_homepage_event_delete:
     pattern:  /homepage/event/delete/{id}
     defaults: { _controller: WEILogisticManagerAdminBundle:Homepage:deleteEvent }
 
-_admin_myfiles:
-    pattern:  /myfiles
-    defaults: { _controller: WEILogisticManagerAdminBundle:MyFiles:index }
+_admin_files:
+    pattern:  /files
+    defaults: { _controller: WEILogisticManagerAdminBundle:Files:index }
 
 _admin_places:
     pattern:  /places

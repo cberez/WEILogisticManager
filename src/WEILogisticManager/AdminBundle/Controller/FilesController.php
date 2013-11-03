@@ -7,16 +7,15 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 
-class MyFilesController extends Controller
+class FilesController extends Controller
 {
     /**
-     * @Route("/myfiles")
+     * @Route("/files")
      * @Template()
      * @Secure("ROLE_USER")
      */
     public function indexAction()
     {
-        return $this->render('WEILogisticManagerAdminBundle:MyFiles:index.html.twig');
+        return $this->render('WEILogisticManagerAdminBundle:Files:index.html.twig');
     }
-
 }
