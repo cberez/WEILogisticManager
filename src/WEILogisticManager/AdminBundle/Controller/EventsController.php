@@ -14,7 +14,7 @@ use JMS\SecurityExtraBundle\Annotation\Secure;
 class EventsController extends Controller
 {
     /**
-     * @Route("/events")
+     * @Route("/events", name="_admin_events")
      * @Template()
      * @Secure("ROLE_USER")
      */
@@ -35,7 +35,7 @@ class EventsController extends Controller
     }
 
     /**
-     * @Route("/events/create")
+     * @Route("/events/create", name="_admin_events_create")
      * @Template()
      * @Secure("ROLE_USER")
      */
@@ -65,7 +65,7 @@ class EventsController extends Controller
     }
 
     /**
-     * @Route("/events/update/{id}")
+     * @Route("/events/update/{id}", name="_admin_events_udpate")
      * @Template()
      * @Secure("ROLE_USER")
      */
@@ -94,7 +94,7 @@ class EventsController extends Controller
     }
 
     /**
-     * @Route("/events/delete/{id}")
+     * @Route("/events/delete/{id}", name="_admin_events_delete")
      * @Template()
      * @Secure("ROLE_USER")
      */
@@ -109,7 +109,7 @@ class EventsController extends Controller
     }
 
     /**
-     * @Route("/events/select/{id}")
+     * @Route("/events/select/{id}", name="_admin_events_select")
      * @Template()
      * @Secure("ROLE_USER")
      */

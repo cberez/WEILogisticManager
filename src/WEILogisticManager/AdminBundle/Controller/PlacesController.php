@@ -14,7 +14,7 @@ use WEILogisticManager\AdminBundle\Form\Type\PlaceType;
 class PlacesController extends Controller
 {
     /**
-     * @Route("/places")
+     * @Route("/places", name="_admin_places")
      * @Template()
      * @Secure("ROLE_USER")
      */
@@ -34,7 +34,7 @@ class PlacesController extends Controller
     }
 
     /**
-     * @Route("/places/create")
+     * @Route("/places/create", name="_admin_places_create")
      * @Template()
      * @Secure("ROLE_USER")
      */
@@ -64,7 +64,7 @@ class PlacesController extends Controller
     }
 
     /**
-     * @Route("/places/update")
+     * @Route("/places/update", name="_admin_places_update")
      * @Template()
      * @Secure("ROLE_USER")
      */
@@ -93,7 +93,7 @@ class PlacesController extends Controller
     }
 
     /**
-     * @Route("/places/delete")
+     * @Route("/places/delete", name="_admin_places_delete")
      * @Template()
      * @Secure("ROLE_USER")
      */

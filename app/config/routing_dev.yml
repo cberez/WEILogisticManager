@@ -19,8 +19,8 @@ _acme_demo:
     resource: "@AcmeDemoBundle/Resources/config/routing.yml"
 
 wei_logistic_manager_admin:
-    resource: "@WEILogisticManagerAdminBundle/Resources/config/routing.yml"
-    prefix:   /
+    resource: "@WEILogisticManagerAdminBundle/Controller"
+    type:     annotation
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"

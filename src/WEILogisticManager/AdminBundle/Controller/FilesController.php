@@ -10,7 +10,7 @@ use JMS\SecurityExtraBundle\Annotation\Secure;
 class FilesController extends Controller
 {
     /**
-     * @Route("/files")
+     * @Route("/files", name="_admin_files")
      * @Template()
      * @Secure("ROLE_USER")
      */

@@ -10,7 +10,7 @@ use JMS\SecurityExtraBundle\Annotation\Secure;
 class TimetablesController extends Controller
 {
     /**
-     * @Route("/timetables")
+     * @Route("/timetables", name="_admin_timetables")
      * @Template()
      * @Secure("ROLE_USER")
      */

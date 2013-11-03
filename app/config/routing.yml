@@ -1,6 +1,6 @@
 wei_logistic_manager_admin:
-    resource: "@WEILogisticManagerAdminBundle/Resources/config/routing.yml"
-    prefix:   /
+    resource: "@WEILogisticManagerAdminBundle/Controller"
+    type:     annotation
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
@@ -20,4 +20,5 @@ fos_user_resetting:
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile
+
 

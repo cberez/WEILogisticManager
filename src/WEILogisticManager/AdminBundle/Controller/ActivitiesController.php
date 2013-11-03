@@ -14,7 +14,7 @@ use WEILogisticManager\AdminBundle\Form\Type\ActivityType;
 class ActivitiesController extends Controller
 {
     /**
-     * @Route("/activities")
+     * @Route("/activities", name="_admin_activities")
      * @Template()
      * @Secure("ROLE_USER")
      */
@@ -34,7 +34,7 @@ class ActivitiesController extends Controller
     }
 
     /**
-     * @Route("/activities/create")
+     * @Route("/activities/create", name="_admin_activities_create")
      * @Template()
      * @Secure("ROLE_USER")
      */
@@ -64,7 +64,7 @@ class ActivitiesController extends Controller
     }
 
     /**
-     * @Route("/activities/update/{id}")
+     * @Route("/activities/update/{id}", name="_admin_activities_update")
      * @Template()
      * @Secure("ROLE_USER")
      */
@@ -93,7 +93,7 @@ class ActivitiesController extends Controller
     }
 
     /**
-     * @Route("/activities/delete/{id}")
+     * @Route("/activities/delete/{id}", name="_admin_activities_delete")
      * @Template()
      * @Secure("ROLE_USER")
      */
