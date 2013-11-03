@@ -40,12 +40,6 @@ class HomepageController extends Controller
      */
     public function createEventAction(Request $request)
     {
-        $event = new Event();
-        $event->setName('Event name');
-        $event->setPlace('Event place');
-        $event->setBeginDate(new \DateTime("now"));
-        $event->setBeginDate(new \DateTime("now"));
-
         $form = $this->createForm(new EventType(), new Event());
 
         $form->handleRequest($request);
@@ -63,7 +57,7 @@ class HomepageController extends Controller
             return $this->redirect($this->generateUrl('_admin_homepage'));
         }
 
-        return $this->render('WEILogisticManagerAdminBundle:Homepage:event.html.twig', array(
+        return $this->render('WEILogisticManagerAdminBundle:Homepage:form.html.twig', array(
             'form' => $form->createView(),
             'action' => "Create",
         ));
@@ -92,7 +86,7 @@ class HomepageController extends Controller
         }
 
 
-        return $this->render('WEILogisticManagerAdminBundle:Homepage:event.html.twig', array(
+        return $this->render('WEILogisticManagerAdminBundle:Homepage:form.html.twig', array(
             'form' => $form->createView(),
             'action' => "Update",
         ));

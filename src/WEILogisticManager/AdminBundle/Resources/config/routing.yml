@@ -26,6 +26,18 @@ _admin_places:
     pattern:  /places
     defaults: { _controller: WEILogisticManagerAdminBundle:Places:index }
 
+_admin_places_create:
+    pattern:  /places/create
+    defaults: { _controller: WEILogisticManagerAdminBundle:Places:create }
+
+_admin_places_update:
+    pattern:  /places/update/{id}
+    defaults: { _controller: WEILogisticManagerAdminBundle:Places:update }
+
+_admin_places_delete:
+    pattern:  /places/delete/{id}
+    defaults: { _controller: WEILogisticManagerAdminBundle:Places:delete }
+
 _admin_activities:
     pattern:  /activities
     defaults: { _controller: WEILogisticManagerAdminBundle:Activities:index }

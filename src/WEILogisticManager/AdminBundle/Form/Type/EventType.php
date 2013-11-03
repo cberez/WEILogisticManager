@@ -15,16 +15,25 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 class EventType extends AbstractType
 {
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     */
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name', 'text');
-        $builder->add('place', 'text');
-        $builder->add('beginDate', 'datetime');
-        $builder->add('endDate', 'datetime');
+        $builder
+            ->add('name', 'text')
+            ->add('place', 'text')
+            ->add('beginDate', 'datetime')
+            ->add('endDate', 'datetime');
     }
 
+    /**
+     * @return string
+     */
     public function getName()
     {
-        return 'event';
+        return 'weilogisticmanager_adminbundle_event';
     }
 }

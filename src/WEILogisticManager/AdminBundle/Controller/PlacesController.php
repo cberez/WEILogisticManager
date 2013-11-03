@@ -5,7 +5,11 @@ namespace WEILogisticManager\AdminBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Doctrine\ORM\EntityManager;
 use JMS\SecurityExtraBundle\Annotation\Secure;
+use Symfony\Component\HttpFoundation\Request;
+use WEILogisticManager\AdminBundle\Entity\Place;
+use WEILogisticManager\AdminBundle\Form\Type\PlaceType;
 
 class PlacesController extends Controller
 {
@@ -16,7 +20,90 @@ class PlacesController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('WEILogisticManagerAdminBundle:Places:index.html.twig');
+        /** @var EntityManager $em */
+        $em = $this->getDoctrine()->getManager();
+        $qb = $em->createQueryBuilder();
+
+        $qb->from('WEILogisticManagerAdminBundle:Place', 'p');
+        $qb->select('p');
+        $places = $qb->getQuery()->getResult();
+
+        return $this->render('WEILogisticManagerAdminBundle:Places:index.html.twig', array(
+            'places' => $places,
+        ));
     }
 
+    /**
+     * @Route("/places/create")
+     * @Template()
+     * @Secure("ROLE_USER")
+     */
+    public function createAction(Request $request)
+    {
+        $form = $this->createForm(new PlaceType(), new Place());
+
+        $form->handleRequest($request);
+
+        if($form->isValid())
+        {
+            //Persist object in database
+            $data = $form->getData();
+
+            /** @var EntityManager $em */
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($data);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('_admin_places'));
+        }
+
+        return $this->render('WEILogisticManagerAdminBundle:Places:form.html.twig', array(
+            'form' => $form->createView(),
+            'action' => "Create",
+        ));
+    }
+
+    /**
+     * @Route("/places/update")
+     * @Template()
+     * @Secure("ROLE_USER")
+     */
+    public function updateAction(Place $place, Request $request)
+    {
+        $form = $this->createForm(new PlaceType(), $place);
+
+        $form->handleRequest($request);
+
+        if($form->isValid())
+        {
+            $data = $form->getData();
+
+            /** @var EntityManager $em */
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($data);
+            $em->flush();
+            return $this->redirect($this->generateUrl('_admin_places'));
+        }
+
+
+        return $this->render('WEILogisticManagerAdminBundle:Places:form.html.twig', array(
+            'form' => $form->createView(),
+            'action' => "Update",
+        ));
+    }
+
+    /**
+     * @Route("/places/delete")
+     * @Template()
+     * @Secure("ROLE_USER")
+     */
+    public function deleteAction(Place $place)
+    {
+        /** @var EntityManager $em */
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($place);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('_admin_places'));
+    }
 }
