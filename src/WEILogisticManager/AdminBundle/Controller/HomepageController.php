@@ -82,7 +82,6 @@ class HomepageController extends Controller
 
         if($form->isValid())
         {
-            //Persist object in database
             $data = $form->getData();
 
             /** @var EntityManager $em */
