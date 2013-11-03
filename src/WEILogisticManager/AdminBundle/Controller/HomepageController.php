@@ -30,6 +30,7 @@ class HomepageController extends Controller
 
         return $this->render('WEILogisticManagerAdminBundle:Homepage:index.html.twig', array(
             'events' => $events,
+            'session' => $this->getRequest()->getSession(),
         ));
     }
 
@@ -103,6 +104,20 @@ class HomepageController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->remove($event);
         $em->flush();
+
+        return $this->redirect($this->generateUrl('_admin_homepage'));
+    }
+
+    /**
+     * @Route("/homepage/event/select/{id}")
+     * @Template()
+     * @Secure("ROLE_USER")
+     */
+    public function selectEventAction(Event $event)
+    {
+        $session = $this->getRequest()->getSession();
+
+        $session->set('event', $event);
 
         return $this->redirect($this->generateUrl('_admin_homepage'));
     }

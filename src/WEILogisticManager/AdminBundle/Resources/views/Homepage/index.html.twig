@@ -26,8 +26,13 @@
                         <td>{{ event.beginDate | date("d/m/Y h:m") }}</td>
                         <td>{{ event.endDate | date("d/m/Y h:m") }}</td>
                         <td>
-                            <a class="btn" href="{{ path('_admin_homepage_event_udpate', {id : event.id}) }}">Update</a>
                             <a class="btn btn-danger" href="{{ path('_admin_homepage_event_delete', {id : event.id}) }}" onclick="return confirm('Are you sure ?')">Delete</a>
+                            <a class="btn" href="{{ path('_admin_homepage_event_udpate', {id : event.id}) }}">Update</a>
+                            {% if session.has("event") %}
+                                {% if session.get("event") != event %}
+                                    <a class="btn btn-primary" href="{{ path('_admin_homepage_event_select', {id : event.id}) }}" >Select</a>
+                                {% endif %}
+                            {% endif %}
                         </td>
                     </tr>
                 {%  endfor %}

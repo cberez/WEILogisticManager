@@ -18,6 +18,10 @@ _admin_homepage_event_delete:
     pattern:  /homepage/event/delete/{id}
     defaults: { _controller: WEILogisticManagerAdminBundle:Homepage:deleteEvent }
 
+_admin_homepage_event_select:
+    pattern:  /homepage/event/select/{id}
+    defaults: { _controller: WEILogisticManagerAdminBundle:Homepage:selectEvent }
+
 _admin_files:
     pattern:  /files
     defaults: { _controller: WEILogisticManagerAdminBundle:Files:index }
