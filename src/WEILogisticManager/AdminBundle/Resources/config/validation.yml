@@ -21,10 +21,10 @@ WEILogisticManager\AdminBundle\Entity\Activity:
             - NotBlank: ~
             - NotIdenticalTo:
                 value : name
-        beginDate:
+        beginTime:
             - NotBlank: ~
             - Type: \DateTime
-        endDate:
+        endTime:
             - NotBlank: ~
             - Type: \DateTime
         place:

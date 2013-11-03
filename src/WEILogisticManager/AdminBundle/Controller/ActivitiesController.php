@@ -23,13 +23,21 @@ class ActivitiesController extends Controller
         /** @var EntityManager $em */
         $em = $this->getDoctrine()->getManager();
         $qb = $em->createQueryBuilder();
+        $qb2 = $em->createQueryBuilder();
 
         $qb->from('WEILogisticManagerAdminBundle:Activity', 'a');
         $qb->select('a');
         $activities = $qb->getQuery()->getResult();
 
+        $qb2->from('WEILogisticManagerAdminBundle:Place', 'p');
+        $nbPlaces = $qb2->select('Count(p)')
+            ->getQuery()
+            ->getSingleResult();
+
         return $this->render('WEILogisticManagerAdminBundle:Activities:index.html.twig', array(
             'activities' => $activities,
+            'nb_places' => $nbPlaces,
+            'session' => $this->getRequest()->getSession(),
         ));
     }
 

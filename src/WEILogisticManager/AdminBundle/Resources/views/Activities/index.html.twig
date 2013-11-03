@@ -1,7 +1,19 @@
 {% extends "WEILogisticManagerAdminBundle::layout.html.twig" %}
 
 {% block content %}
-    {% if activities is empty %}
+    {% if session.has("event") != true %}
+        <div class="alert">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>Warning !</strong> Please select an event to work with on "Events" page !
+        </div>
+
+    {% elseif nb_places == 0 %}
+        <div class="alert">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>Warning !</strong> Please create a place where the activity will be on "Places" page !
+        </div>
+
+    {% elseif activities is empty %}
         <p>You don't have any activities yet, please create one : </p>
         <a class="btn btn-success btn-large" href="{{ path('_admin_activities_create') }}">Create An Activity</a>
 
