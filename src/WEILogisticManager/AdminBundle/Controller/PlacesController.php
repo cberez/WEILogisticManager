@@ -11,6 +11,7 @@ class PlacesController extends Controller
     /**
      * @Route("/places")
      * @Template()
+     * @Secure("ROLE_USER")
      */
     public function indexAction()
     {

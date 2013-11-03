@@ -11,6 +11,7 @@ class TimetablesController extends Controller
     /**
      * @Route("/timetables")
      * @Template()
+     * @Secure("ROLE_USER")
      */
     public function indexAction()
     {

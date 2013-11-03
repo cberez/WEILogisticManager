@@ -11,6 +11,7 @@ class ActivitiesController extends Controller
     /**
      * @Route("/activities")
      * @Template()
+     * @Secure("ROLE_USER")
      */
     public function indexAction()
     {

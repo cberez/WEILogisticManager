@@ -11,6 +11,7 @@ class MyFilesController extends Controller
     /**
      * @Route("/myfiles")
      * @Template()
+     * @Secure("ROLE_USER")
      */
     public function indexAction()
     {
