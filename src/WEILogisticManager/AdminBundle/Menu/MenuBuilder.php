@@ -30,11 +30,11 @@ class MenuBuilder
         $menu->setChildrenAttributes(array('class' => 'nav'));
         $menu->setCurrentUri($request->getRequestUri());
 
-        $menu->addChild('Accueil', array('route' => '_admin_homepage'));
-        $menu->addChild('Mes Fichiers', array('route' => '_admin_myfiles'));
-        $menu->addChild('Lieux', array('route' => '_admin_places'));
-        $menu->addChild('Activités', array('route' => '_admin_activities'));
-        $menu->addChild('Emplois du temps', array('route' => '_admin_timetables'));
+        $menu->addChild('Homepage', array('route' => '_admin_homepage'));
+        $menu->addChild('My Files', array('route' => '_admin_myfiles'));
+        $menu->addChild('Places', array('route' => '_admin_places'));
+        $menu->addChild('Activities', array('route' => '_admin_activities'));
+        $menu->addChild('Timetables', array('route' => '_admin_timetables'));
 
         return $menu;
     }

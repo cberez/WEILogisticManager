@@ -5,12 +5,12 @@ namespace WEILogisticManager\AdminBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Event
+ * Activity
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class Event
+class Activity
 {
     /**
      * @var integer
@@ -29,25 +29,25 @@ class Event
     protected $name;
 
     /**
-     * @var \DateTime
+     * @var Place
      *
-     * @ORM\Column(name="beginDate", type="datetime")
-     */
-    protected $beginDate;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="endDate", type="datetime")
-     */
-    protected $endDate;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="place", type="string", length=255)
+     * @ORM\OneToOne(targetEntity="WEILogisticManager\AdminBundle\Entity\Place")
      */
     protected $place;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="beginTime", type="datetime")
+     */
+    protected $beginTime;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="endTime", type="datetime")
+     */
+    protected $endTime;
 
 
     /**
@@ -64,7 +64,7 @@ class Event
      * Set name
      *
      * @param string $name
-     * @return Event
+     * @return Activity
      */
     public function setName($name)
     {
@@ -84,56 +84,56 @@ class Event
     }
 
     /**
-     * Set beginDate
+     * Set beginTime
      *
-     * @param \DateTime $beginDate
-     * @return Event
+     * @param \DateTime $beginTime
+     * @return Activity
      */
-    public function setBeginDate($beginDate)
+    public function setBeginTime($beginTime)
     {
-        $this->beginDate = $beginDate;
+        $this->beginTime = $beginTime;
     
         return $this;
     }
 
     /**
-     * Get beginDate
+     * Get beginTime
      *
      * @return \DateTime 
      */
-    public function getBeginDate()
+    public function getBeginTime()
     {
-        return $this->beginDate;
+        return $this->beginTime;
     }
 
     /**
-     * Set endDate
+     * Set endTime
      *
-     * @param \DateTime $endDate
-     * @return Event
+     * @param \DateTime $endTime
+     * @return Activity
      */
-    public function setEndDate($endDate)
+    public function setEndTime($endTime)
     {
-        $this->endDate = $endDate;
+        $this->endTime = $endTime;
     
         return $this;
     }
 
     /**
-     * Get endDate
+     * Get endTime
      *
      * @return \DateTime 
      */
-    public function getEndDate()
+    public function getEndTime()
     {
-        return $this->endDate;
+        return $this->endTime;
     }
 
     /**
      * Set place
      *
      * @param string $place
-     * @return Event
+     * @return Activity
      */
     public function setPlace($place)
     {
@@ -150,13 +150,5 @@ class Event
     public function getPlace()
     {
         return $this->place;
-    }
-
-    public function __construct()
-    {
-        $this->setName("name");
-        $this->setPlace("place");
-        $this->setBeginDate(new \DateTime('now'));
-        $this->setEndDate(new \DateTime('now'));
     }
 }
