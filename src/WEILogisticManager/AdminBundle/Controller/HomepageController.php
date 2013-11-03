@@ -85,10 +85,7 @@ class HomepageController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($data);
             $em->flush();
-            return $this->render('WEILogisticManagerAdminBundle:Homepage:event.html.twig', array(
-                'form' => $form->createView(),
-                'action' => "Update",
-            ));
+            return $this->redirect($this->generateUrl('_admin_homepage'));
         }
 
 
