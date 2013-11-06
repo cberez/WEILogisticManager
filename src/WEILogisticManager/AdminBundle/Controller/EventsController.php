@@ -30,7 +30,6 @@ class EventsController extends Controller
 
         return $this->render('WEILogisticManagerAdminBundle:Events:index.html.twig', array(
             'events' => $events,
-            'session' => $this->getRequest()->getSession(),
         ));
     }
 

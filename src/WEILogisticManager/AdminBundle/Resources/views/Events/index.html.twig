@@ -8,7 +8,7 @@
         <a class="btn btn-success btn-large" href="{{ path('_admin_events_create') }}">Create An Event</a>
 
     {% else %}
-        {% if session.has("event") != true %}
+        {% if app.session.has("event") != true %}
             <div class="alert">
                 <button type="button" class="close" data-dismiss="alert">×</button>
                 <strong>Warning !</strong> Please select an event to work with !
@@ -34,8 +34,8 @@
                         <td>
                             <a class="btn btn-danger" href="{{ path('_admin_events_delete', {id : event.id}) }}" onclick="return confirm('Are you sure ?')">Delete</a>
                             <a class="btn" href="{{ path('_admin_events_udpate', {id : event.id}) }}">Update</a>
-                            {% if session.has("event") %}
-                                {% if session.get("event") != event %}
+                            {% if app.session.has("event") %}
+                                {% if app.session.get("event") != event %}
                                     <a class="btn btn-primary" href="{{ path('_admin_events_select', {id : event.id}) }}" >Select</a>
                                 {% endif %}
                             {% else %}
