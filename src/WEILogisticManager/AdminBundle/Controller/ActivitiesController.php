@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 use Symfony\Component\HttpFoundation\Request;
 use WEILogisticManager\AdminBundle\Entity\Activity;
+use WEILogisticManager\AdminBundle\Entity\Event;
 use WEILogisticManager\AdminBundle\Form\Type\ActivityType;
 
 class ActivitiesController extends Controller
@@ -37,7 +38,6 @@ class ActivitiesController extends Controller
         return $this->render('WEILogisticManagerAdminBundle:Activities:index.html.twig', array(
             'activities' => $activities,
             'nb_places' => $nbPlaces,
-            'session' => $this->getRequest()->getSession(),
         ));
     }
 
@@ -59,6 +59,21 @@ class ActivitiesController extends Controller
 
             /** @var EntityManager $em */
             $em = $this->getDoctrine()->getManager();
+
+            $currentEvent = $em->createQueryBuilder()
+                ->from('WEILogisticManagerAdminBundle:Event', 'e')
+                ->where('e.id = :id')
+                ->setParameter('id', $this->getRequest()->getSession()->get("event")->getId())
+                ->select('e')
+                ->getQuery()
+                ->getSingleResult();
+
+            //$entity = $entitymanager->merge($entity)
+
+            $data->setEvent($currentEvent);
+
+            var_dump($data);
+
             $em->persist($data);
             $em->flush();
 

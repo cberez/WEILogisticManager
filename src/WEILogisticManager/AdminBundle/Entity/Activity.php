@@ -31,14 +31,16 @@ class Activity
     /**
      * @var Place
      *
-     * @ORM\OneToOne(targetEntity="WEILogisticManager\AdminBundle\Entity\Place")
+     * @ORM\ManyToOne(targetEntity="WEILogisticManager\AdminBundle\Entity\Place")
+     * @ORM\JoinColumn(name="place_id", referencedColumnName="id")
      */
     protected $place;
 
     /**
      * @var Event
      *
-     * @ORM\OneToOne(targetEntity="WEILogisticManager\AdminBundle\Entity\Event")
+     * @ORM\ManyToOne(targetEntity="WEILogisticManager\AdminBundle\Entity\Event")
+     * @ORM\JoinColumn(name="event_id", referencedColumnName="id")
      */
     protected $event;
 

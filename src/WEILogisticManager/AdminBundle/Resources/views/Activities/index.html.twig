@@ -1,7 +1,7 @@
 {% extends "WEILogisticManagerAdminBundle::layout.html.twig" %}
 
 {% block content %}
-    {% if session.has("event") != true %}
+    {% if app.session.has("event") != true %}
         <div class="alert">
             <button type="button" class="close" data-dismiss="alert">×</button>
             <strong>Warning !</strong> Please select an event to work with on "Events" page !
@@ -32,17 +32,17 @@
             {% for activity in activities %}
                 <tr>
                     <td>{{ activity.name }}</td>
-                    <td>{{ activity.place }}</td>
-                    <td>{{ activity.beginDate | date("d/m/Y h:m") }}</td>
-                    <td>{{ activity.endDate | date("d/m/Y h:m") }}</td>
+                    <td>{{ activity.place.name }}</td>
+                    <td>{{ activity.beginTime | date("d/m/Y h:m") }}</td>
+                    <td>{{ activity.endTime | date("d/m/Y h:m") }}</td>
                     <td>
-                        <a class="btn" href="{{ path('_admin_places_update', {id : activity.id}) }}">Update</a>
-                        <a class="btn btn-danger" href="{{ path('_admin_places_delete', {id : activity.id}) }}" onclick="return confirm('Are you sure ?')">Delete</a>
+                        <a class="btn" href="{{ path('_admin_activities_update', {id : activity.id}) }}">Update</a>
+                        <a class="btn btn-danger" href="{{ path('_admin_activities_delete', {id : activity.id}) }}" onclick="return confirm('Are you sure ?')">Delete</a>
                     </td>
                 </tr>
             {%  endfor %}
             <tr>
-                <td colspan="5"><a class="btn btn-success btn-block" href="{{ path('_admin_places_create') }}">Create A Place</a></td>
+                <td colspan="5"><a class="btn btn-success btn-block" href="{{ path('_admin_activities_create') }}">Create An Activity</a></td>
             </tr>
             </tbody>
         </table>
