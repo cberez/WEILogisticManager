@@ -19,7 +19,7 @@
                     <td>{{ place.name }}</td>
                     <td>
                         <a class="btn" href="{{ path('_admin_places_update', {id : place.id}) }}">Update</a>
-                        <a class="btn btn-danger" href="{{ path('_admin_places_delete', {id : place.id}) }}" onclick="return confirm('Are you sure ?')">Delete</a>
+                        <a class="btn btn-danger" href="{{ path('_admin_places_delete', {id : place.id}) }}" onclick="return confirm('Are you sure ?\nThis will delete all related Activity')">Delete</a>
                     </td>
                 </tr>
             {%  endfor %}

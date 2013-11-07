@@ -32,7 +32,7 @@
                         <td>{{ event.beginDate | date("d/m/Y h:m") }}</td>
                         <td>{{ event.endDate | date("d/m/Y h:m") }}</td>
                         <td>
-                            <a class="btn btn-danger" href="{{ path('_admin_events_delete', {id : event.id}) }}" onclick="return confirm('Are you sure ?')">Delete</a>
+                            <a class="btn btn-danger" href="{{ path('_admin_events_delete', {id : event.id}) }}" onclick="return confirm('Are you sure ?\nThis will delete all related elements (Activity, Place, Timetable, ...)')">Delete</a>
                             <a class="btn" href="{{ path('_admin_events_udpate', {id : event.id}) }}">Update</a>
                             {% if app.session.has("event") %}
                                 {% if app.session.get("event") != event %}
