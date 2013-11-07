@@ -46,11 +46,14 @@ class PlacesController extends Controller
 
         if($form->isValid())
         {
-            //Persist object in database
             $data = $form->getData();
 
             /** @var EntityManager $em */
             $em = $this->getDoctrine()->getManager();
+
+            $currentEvent = $em->merge($this->getRequest()->getSession()->get("event"));
+            $data->setEvent($currentEvent);
+
             $em->persist($data);
             $em->flush();
 
@@ -80,8 +83,13 @@ class PlacesController extends Controller
 
             /** @var EntityManager $em */
             $em = $this->getDoctrine()->getManager();
+
+            $currentEvent = $em->merge($this->getRequest()->getSession()->get("event"));
+            $data->setEvent($currentEvent);
+
             $em->persist($data);
             $em->flush();
+
             return $this->redirect($this->generateUrl('_admin_places'));
         }
 

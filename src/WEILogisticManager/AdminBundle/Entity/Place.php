@@ -28,6 +28,14 @@ class Place
      */
     protected $name;
 
+    /**
+     * @var Event
+     *
+     * @ORM\ManyToOne(targetEntity="WEILogisticManager\AdminBundle\Entity\Event")
+     * @ORM\JoinColumn(name="event_id", referencedColumnName="id")
+     */
+    protected $event;
+
 
     /**
      * Get id
@@ -60,5 +68,28 @@ class Place
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set event
+     *
+     * @param \WEILogisticManager\AdminBundle\Entity\Event $event
+     * @return Place
+     */
+    public function setEvent(\WEILogisticManager\AdminBundle\Entity\Event $event = null)
+    {
+        $this->event = $event;
+    
+        return $this;
+    }
+
+    /**
+     * Get event
+     *
+     * @return \WEILogisticManager\AdminBundle\Entity\Event 
+     */
+    public function getEvent()
+    {
+        return $this->event;
     }
 }

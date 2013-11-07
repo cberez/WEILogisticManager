@@ -54,25 +54,13 @@ class ActivitiesController extends Controller
 
         if($form->isValid())
         {
-            //Persist object in database
             $data = $form->getData();
 
             /** @var EntityManager $em */
             $em = $this->getDoctrine()->getManager();
 
-            $currentEvent = $em->createQueryBuilder()
-                ->from('WEILogisticManagerAdminBundle:Event', 'e')
-                ->where('e.id = :id')
-                ->setParameter('id', $this->getRequest()->getSession()->get("event")->getId())
-                ->select('e')
-                ->getQuery()
-                ->getSingleResult();
-
-            //$entity = $entitymanager->merge($entity)
-
+            $currentEvent = $em->merge($this->getRequest()->getSession()->get("event"));
             $data->setEvent($currentEvent);
-
-            var_dump($data);
 
             $em->persist($data);
             $em->flush();
@@ -103,8 +91,13 @@ class ActivitiesController extends Controller
 
             /** @var EntityManager $em */
             $em = $this->getDoctrine()->getManager();
+
+            $currentEvent = $em->merge($this->getRequest()->getSession()->get("event"));
+            $data->setEvent($currentEvent);
+
             $em->persist($data);
             $em->flush();
+
             return $this->redirect($this->generateUrl('_admin_activities'));
         }
 
