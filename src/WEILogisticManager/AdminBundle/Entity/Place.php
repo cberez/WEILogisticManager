@@ -32,7 +32,7 @@ class Place
      * @var Event
      *
      * @ORM\ManyToOne(targetEntity="WEILogisticManager\AdminBundle\Entity\Event")
-     * @ORM\JoinColumn(name="event_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="event_id", referencedColumnName="id", onDelete="CASCADE")
      */
     protected $event;
 

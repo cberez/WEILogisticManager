@@ -32,7 +32,7 @@ class Activity
      * @var Place
      *
      * @ORM\ManyToOne(targetEntity="WEILogisticManager\AdminBundle\Entity\Place")
-     * @ORM\JoinColumn(name="place_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="place_id", referencedColumnName="id", onDelete="CASCADE")
      */
     protected $place;
 
@@ -40,7 +40,7 @@ class Activity
      * @var Event
      *
      * @ORM\ManyToOne(targetEntity="WEILogisticManager\AdminBundle\Entity\Event")
-     * @ORM\JoinColumn(name="event_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="event_id", referencedColumnName="id", onDelete="CASCADE")
      */
     protected $event;
 

@@ -67,7 +67,7 @@ class PlacesController extends Controller
     }
 
     /**
-     * @Route("/places/update", name="_admin_places_update")
+     * @Route("/places/update/{id}", name="_admin_places_update")
      * @Template()
      * @Secure("ROLE_USER")
      */
@@ -101,7 +101,7 @@ class PlacesController extends Controller
     }
 
     /**
-     * @Route("/places/delete", name="_admin_places_delete")
+     * @Route("/places/delete/{id}", name="_admin_places_delete")
      * @Template()
      * @Secure("ROLE_USER")
      */
