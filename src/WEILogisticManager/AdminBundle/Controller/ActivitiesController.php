@@ -48,7 +48,11 @@ class ActivitiesController extends Controller
      */
     public function createAction(Request $request)
     {
-        $form = $this->createForm(new ActivityType(), new Activity());
+        $act = new Activity();
+        $act->setBeginTime($this->getRequest()->getSession()->get("event")->getBeginDate());
+        $act->setEndTime($this->getRequest()->getSession()->get("event")->getEndDate());
+
+        $form = $this->createForm(new ActivityType(), $act);
 
         $form->handleRequest($request);
 
