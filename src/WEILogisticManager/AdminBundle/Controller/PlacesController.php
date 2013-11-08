@@ -15,7 +15,7 @@ class PlacesController extends Controller
 {
     /**
      * @Route("/places", name="_admin_places")
-     * @Template()
+     * @Template("WEILogisticManagerAdminBundle:Places:index.html.twig")
      * @Secure("ROLE_USER")
      */
     public function indexAction()
@@ -28,14 +28,14 @@ class PlacesController extends Controller
         $qb->select('p');
         $places = $qb->getQuery()->getResult();
 
-        return $this->render('WEILogisticManagerAdminBundle:Places:index.html.twig', array(
+        return array(
             'places' => $places,
-        ));
+        );
     }
 
     /**
      * @Route("/places/create", name="_admin_places_create")
-     * @Template()
+     * @Template("WEILogisticManagerAdminBundle:Places:form.html.twig")
      * @Secure("ROLE_USER")
      */
     public function createAction(Request $request)
@@ -60,15 +60,15 @@ class PlacesController extends Controller
             return $this->redirect($this->generateUrl('_admin_places'));
         }
 
-        return $this->render('WEILogisticManagerAdminBundle:Places:form.html.twig', array(
+        return array(
             'form' => $form->createView(),
             'action' => "Create",
-        ));
+        );
     }
 
     /**
      * @Route("/places/update/{id}", name="_admin_places_update")
-     * @Template()
+     * @Template("WEILogisticManagerAdminBundle:Places:form.html.twig")
      * @Secure("ROLE_USER")
      */
     public function updateAction(Place $place, Request $request)
@@ -94,10 +94,10 @@ class PlacesController extends Controller
         }
 
 
-        return $this->render('WEILogisticManagerAdminBundle:Places:form.html.twig', array(
+        return array(
             'form' => $form->createView(),
             'action' => "Update",
-        ));
+        );
     }
 
     /**

@@ -11,12 +11,12 @@ class TimetablesController extends Controller
 {
     /**
      * @Route("/timetables", name="_admin_timetables")
-     * @Template()
+     * @Template("WEILogisticManagerAdminBundle:Timetables:index.html.twig")
      * @Secure("ROLE_USER")
      */
     public function indexAction()
     {
-        return $this->render('WEILogisticManagerAdminBundle:Timetables:index.html.twig');
+        return array();
     }
 
 }

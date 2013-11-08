@@ -10,11 +10,11 @@ class HomepageController extends Controller
 {
     /**
      * @Route("/", name="_homepage")
-     * @Template()
+     * @Template("WEILogisticManagerAdminBundle:Homepage:index.html.twig")
      */
     public function indexAction()
     {
-        return $this->render('WEILogisticManagerAdminBundle:Homepage:index.html.twig');
+        return array();
     }
 
 }

@@ -16,7 +16,7 @@ class ActivitiesController extends Controller
 {
     /**
      * @Route("/activities", name="_admin_activities")
-     * @Template()
+     * @Template("WEILogisticManagerAdminBundle:Activities:index.html.twig")
      * @Secure("ROLE_USER")
      */
     public function indexAction()
@@ -35,15 +35,15 @@ class ActivitiesController extends Controller
             ->getQuery()
             ->getSingleResult();
 
-        return $this->render('WEILogisticManagerAdminBundle:Activities:index.html.twig', array(
+        return array(
             'activities' => $activities,
             'nb_places' => $nbPlaces,
-        ));
+        );
     }
 
     /**
      * @Route("/activities/create", name="_admin_activities_create")
-     * @Template()
+     * @Template("WEILogisticManagerAdminBundle:Activities:form.html.twig")
      * @Secure("ROLE_USER")
      */
     public function createAction(Request $request)
@@ -72,15 +72,15 @@ class ActivitiesController extends Controller
             return $this->redirect($this->generateUrl('_admin_activities'));
         }
 
-        return $this->render('WEILogisticManagerAdminBundle:Activities:form.html.twig', array(
+        return array(
             'form' => $form->createView(),
             'action' => "Create",
-        ));
+        );
     }
 
     /**
      * @Route("/activities/update/{id}", name="_admin_activities_update")
-     * @Template()
+     * @Template("WEILogisticManagerAdminBundle:Activities:form.html.twig")
      * @Secure("ROLE_USER")
      */
     public function updateAction(Activity $activity, Request $request)
@@ -106,10 +106,10 @@ class ActivitiesController extends Controller
         }
 
 
-        return $this->render('WEILogisticManagerAdminBundle:Activities:form.html.twig', array(
+        return array(
             'form' => $form->createView(),
             'action' => "Update",
-        ));
+        );
     }
 
     /**

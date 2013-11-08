@@ -11,11 +11,11 @@ class FilesController extends Controller
 {
     /**
      * @Route("/files", name="_admin_files")
-     * @Template()
+     * @Template("WEILogisticManagerAdminBundle:Files:index.html.twig")
      * @Secure("ROLE_USER")
      */
     public function indexAction()
     {
-        return $this->render('WEILogisticManagerAdminBundle:Files:index.html.twig');
+        return array();
     }
 }

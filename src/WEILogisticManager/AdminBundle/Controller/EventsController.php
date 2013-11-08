@@ -15,7 +15,7 @@ class EventsController extends Controller
 {
     /**
      * @Route("/events", name="_admin_events")
-     * @Template()
+     * @Template("WEILogisticManagerAdminBundle:Events:index.html.twig")
      * @Secure("ROLE_USER")
      */
     public function indexAction()
@@ -28,14 +28,14 @@ class EventsController extends Controller
         $qb->select('e');
         $events = $qb->getQuery()->getResult();
 
-        return $this->render('WEILogisticManagerAdminBundle:Events:index.html.twig', array(
+        return array(
             'events' => $events,
-        ));
+        );
     }
 
     /**
      * @Route("/events/create", name="_admin_events_create")
-     * @Template()
+     * @Template("WEILogisticManagerAdminBundle:Events:form.html.twig")
      * @Secure("ROLE_USER")
      */
     public function createAction(Request $request)
@@ -57,15 +57,15 @@ class EventsController extends Controller
             return $this->redirect($this->generateUrl('_admin_events'));
         }
 
-        return $this->render('WEILogisticManagerAdminBundle:Events:form.html.twig', array(
+        return array(
             'form' => $form->createView(),
             'action' => "Create",
-        ));
+        );
     }
 
     /**
      * @Route("/events/update/{id}", name="_admin_events_udpate")
-     * @Template()
+     * @Template("WEILogisticManagerAdminBundle:Events:form.html.twig")
      * @Secure("ROLE_USER")
      */
     public function updateAction(Event $event, Request $request)
@@ -86,10 +86,10 @@ class EventsController extends Controller
         }
 
 
-        return $this->render('WEILogisticManagerAdminBundle:Events:form.html.twig', array(
+        return array(
             'form' => $form->createView(),
             'action' => "Update",
-        ));
+        );
     }
 
     /**
