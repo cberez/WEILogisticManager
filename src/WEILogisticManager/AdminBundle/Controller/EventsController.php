@@ -44,8 +44,7 @@ class EventsController extends Controller
 
         $form->handleRequest($request);
 
-        if($form->isValid())
-        {
+        if($form->isValid()){
             //Persist object in database
             $data = $form->getData();
 
@@ -74,8 +73,7 @@ class EventsController extends Controller
 
         $form->handleRequest($request);
 
-        if($form->isValid())
-        {
+        if($form->isValid()){
             $data = $form->getData();
 
             /** @var EntityManager $em */

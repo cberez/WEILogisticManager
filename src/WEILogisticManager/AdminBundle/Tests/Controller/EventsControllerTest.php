@@ -12,5 +12,4 @@ class EventsControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/activities');
     }
-
 }

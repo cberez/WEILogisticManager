@@ -12,5 +12,4 @@ class HomepageControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/activities');
     }
-
 }

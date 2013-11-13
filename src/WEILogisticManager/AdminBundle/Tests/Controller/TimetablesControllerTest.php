@@ -12,5 +12,4 @@ class TimetablesControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/timetables');
     }
-
 }

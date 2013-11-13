@@ -44,8 +44,7 @@ class PlacesController extends Controller
 
         $form->handleRequest($request);
 
-        if($form->isValid())
-        {
+        if($form->isValid()){
             $data = $form->getData();
 
             /** @var EntityManager $em */
@@ -77,8 +76,7 @@ class PlacesController extends Controller
 
         $form->handleRequest($request);
 
-        if($form->isValid())
-        {
+        if($form->isValid()){
             $data = $form->getData();
 
             /** @var EntityManager $em */

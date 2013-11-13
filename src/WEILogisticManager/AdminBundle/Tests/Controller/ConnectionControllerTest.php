@@ -12,5 +12,4 @@ class ConnectionControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/');
     }
-
 }

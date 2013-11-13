@@ -12,5 +12,4 @@ class PlacesControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/places');
     }
-
 }

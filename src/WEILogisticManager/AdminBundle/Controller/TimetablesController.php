@@ -18,5 +18,4 @@ class TimetablesController extends Controller
     {
         return array();
     }
-
 }
