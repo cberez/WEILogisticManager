@@ -56,7 +56,7 @@ class ActivitiesController extends Controller
 
         $form->handleRequest($request);
 
-        if($form->isValid()) {
+        if ($form->isValid()) {
             $data = $form->getData();
 
             /** @var EntityManager $em */
@@ -88,7 +88,7 @@ class ActivitiesController extends Controller
 
         $form->handleRequest($request);
 
-        if($form->isValid()) {
+        if ($form->isValid()) {
             $data = $form->getData();
 
             /** @var EntityManager $em */
