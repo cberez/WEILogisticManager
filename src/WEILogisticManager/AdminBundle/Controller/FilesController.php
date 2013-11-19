@@ -6,6 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use JMS\SecurityExtraBundle\Annotation\Secure;
+use Symfony\Component\HttpFoundation\Request;
+use WEILogisticManager\AdminBundle\Entity\UploadedDocument;
+use WEILogisticManager\AdminBundle\Form\Type\UploadedDocumentType;
 
 class FilesController extends Controller
 {
@@ -16,6 +19,35 @@ class FilesController extends Controller
      */
     public function indexAction()
     {
-        return array();
+        return array(
+            'files' => array(),
+        );
+    }
+    /**
+     * @Route("/files/upload", name="_admin_files_upload")
+     * @Template("WEILogisticManagerAdminBundle:Files:upload.html.twig")
+     * @Secure("ROLE_USER")
+     */
+    public function uploadAction(Request $request)
+    {
+        $form = $this->createForm(new UploadedDocumentType(), new UploadedDocument());
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            //Persist object in database
+            $data = $form->getData();
+            var_dump($data);
+            /** @var EntityManager $em */
+            /*$em = $this->getDoctrine()->getManager();
+            $em->persist($data);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('_admin_events'));*/
+        }
+
+        return array(
+            'form' => $form->createView(),
+        );
     }
 }

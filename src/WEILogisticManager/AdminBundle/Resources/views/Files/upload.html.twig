@@ -1,0 +1,14 @@
+{% extends "WEILogisticManagerAdminBundle::layout.html.twig" %}
+
+{% block content %}
+
+    {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+        <legend>Upload a student listing</legend>
+        {{ form_row(form.name) }}
+        {{ form_row(form.file) }}
+
+        <input type="submit" value="Upload" class="btn btn-primary" />
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,5 +1,14 @@
 {% extends "WEILogisticManagerAdminBundle::layout.html.twig" %}
 
 {% block content %}
-    <h1>Hello !</h1>
+    {% if app.session.has("event") != true %}
+        <div class="alert">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>Warning !</strong> Please select an event to work with on "Events" page !
+        </div>
+
+    {% elseif files is empty %}
+        <p>You don't have any student listing yet, please upload one : </p>
+        <a class="btn btn-success btn-large" href="{{ path('_admin_files_upload') }}">Upload a listing</a>
+    {% endif %}
 {% endblock %}
