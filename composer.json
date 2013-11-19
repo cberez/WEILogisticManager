@@ -35,7 +35,8 @@
 
         "knplabs/knp-menu-bundle":"*",
         "friendsofsymfony/user-bundle": "dev-master",
-        "jms/security-extra-bundle": "dev-master"
+        "jms/security-extra-bundle": "dev-master",
+        "CodePlex/PHPExcel": "1.7.8"
     },
     "scripts": {
         "post-install-cmd": [
