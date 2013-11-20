@@ -36,7 +36,7 @@ class FilesController extends Controller
 
         if ($form->isValid()) {
             //Persist object in database
-            $data = $form->getData();
+            /*$data = $form->getData();
             $extension = preg_split('/\./', $data->file->getClientOriginalName());
             $extension = end($extension);
 
@@ -51,7 +51,7 @@ class FilesController extends Controller
             }
             else if ($extension == "xls") {
 
-            }
+            }*/
 
 
             /** @var EntityManager $em */

@@ -5,9 +5,9 @@ WEILogisticManager
 
 Requirements
 ------------
-[composer](http://getcomposer.org/)  
+[Composer](http://getcomposer.org/)  
 MySQL  
-PHP 5.4  
+PHP >= 5.3.3
 
 
 Install and run project 
