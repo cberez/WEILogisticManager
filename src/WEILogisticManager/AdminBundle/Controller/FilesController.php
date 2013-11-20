@@ -44,15 +44,7 @@ class FilesController extends Controller
 
             $objReader = \PHPExcel_IOFactory::createReader('Excel2007');
             $objPHPExcel = $objReader->load($data->file);
-            var_dump($objPHPExcel);
-
-            if($extension == "xlsx") {
-
-            }
-            else if ($extension == "xls") {
-
-            }*/
-
+            var_dump($objPHPExcel);*/
 
             /** @var EntityManager $em */
             /*$em = $this->getDoctrine()->getManager();
