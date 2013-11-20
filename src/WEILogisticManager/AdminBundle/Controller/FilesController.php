@@ -37,7 +37,23 @@ class FilesController extends Controller
         if ($form->isValid()) {
             //Persist object in database
             $data = $form->getData();
-            var_dump($data);
+            $extension = preg_split('/\./', $data->file->getClientOriginalName());
+            $extension = end($extension);
+
+            $data->upload();
+
+            $objReader = \PHPExcel_IOFactory::createReader('Excel2007');
+            $objPHPExcel = $objReader->load($data->file);
+            var_dump($objPHPExcel);
+
+            if($extension == "xlsx") {
+
+            }
+            else if ($extension == "xls") {
+
+            }
+
+
             /** @var EntityManager $em */
             /*$em = $this->getDoctrine()->getManager();
             $em->persist($data);
